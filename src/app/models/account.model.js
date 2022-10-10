@@ -17,11 +17,11 @@ const Account = new Schema({
     type: Date,
     required: false,
   },
-  roleId: { type: ObjectId, ref: "role" },
+  roleId: { type: ObjectId, ref: "role" , required: true},
   phoneNumber: {
-    type: Number,
-    min: 10,
-    max: 11,
+    type: String,
+    minLength: 10,
+    maxLength: 11,
     required: false,
   },
   displayAddress: {

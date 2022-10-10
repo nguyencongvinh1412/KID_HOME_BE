@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
 const CentreUser = new Schema({
-  accountId: {type: ObjectId, ref: 'account'},
-  centreId: {type: ObjectId, ref: 'centre'},
+  accountId: {type: ObjectId, ref: 'account', required: true},
+  centreId: {type: ObjectId, ref: 'centre', required: true},
 }, {
     timestamps: true
 });

@@ -13,20 +13,9 @@ const Centre = new Schema({
     required: true,
   },
   contactPhone: {
-    type: Number,
-    min: 10,
-    max: 12,
-  },
-  gelocation: {
-    type: {
-        type: String,
-        enum: ['Point'],
-        required: true
-    },
-    coordinates: {
-      type: [Number],
-      required: true
-    }
+    type: String,
+    minLength: 10,
+    maxLength: 11,
   },
   openHours: {
     startTime: {
@@ -36,6 +25,17 @@ const Centre = new Schema({
     endTime: {
         type: String,
         required: true
+    }
+  },
+  geolocation: {
+    type: {
+      type: String,
+      enum: ['Point'],
+      required: true
+    },
+    coordinates: {
+      type: [Number],
+      required: true
     }
   },
   description: {
@@ -60,4 +60,4 @@ const Centre = new Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model("center", Centre);
+module.exports = mongoose.model("centre", Centre);

@@ -33,7 +33,7 @@ const authHelper = {
   },
 
   checkUsername: async (username) => {
-    const user = await User.findOne({username: username});
+    const user = await AccountModel.findOne({username: username}).populate("roleId");
     if (!user) {
       return false;
     }
@@ -53,7 +53,7 @@ const authHelper = {
     return jwt.sign(
       payload,
       process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: '20s' }
+      { expiresIn: '20m' }
     );
   },
 
@@ -61,22 +61,8 @@ const authHelper = {
     return jwt.sign(
       payload,
       process.env.REFRESH_TOKEN_SECRET,
-      {expiresIn: '365d'}
+      {expiresIn: '10d'}
     );
-  },
-
-  createRefreshTokenCookie: (req, res, refreshToken) => {
-    try {
-      res.cookie("refreshToken", refreshToken, {
-        httpOnly: true,
-        secure: false,
-        sameSite: true,
-        maxAge: 365 * 24 * 60 * 60 * 60,
-        signed: true,
-      });
-    } catch (error) {
-      return res.status(500).json({"detail": "create refresh token cookie faild", "error": error});
-    }
   },
 
   login: async (req, res) => {
@@ -91,12 +77,11 @@ const authHelper = {
     }
 
     if (user && invalidPassword) {
-      const payload = {id: user.id, admin: user.admin};
+      const payload = {...user};
       const token = authHelper.createToken(payload);
       const refreshToken = authHelper.createRefreshToken(payload);
 
       let {password, ...other} = user._doc;
-      authHelper.createRefreshTokenCookie(req, res, refreshToken);
       const res_data = {...other, token, refreshToken};
       return res_data;
     }

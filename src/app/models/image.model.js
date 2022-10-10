@@ -10,7 +10,8 @@ const Image = new Schema({
     },
     centreId: {
         type: ObjectId,
-        ref: "centre"
+        ref: "centre",
+        required: true
     }
 }, {
     timestamps: true
