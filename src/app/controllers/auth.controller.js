@@ -31,9 +31,9 @@ const AuthController = {
       });
       
       const {password, ...result} = account._doc;
-      return res.json({message: "Successfully", data: result});
+      return res.json({message: "Successfully", result});
     } catch (error) {
-      return res.status(400).json({message: error.message, data: error});
+      return res.status(400).json({message: error.message, result: error});
     }
   },
 
@@ -44,9 +44,9 @@ const AuthController = {
             throw new Error('Login failed');
         }
 
-        return res.json({message: "Successfully", data: loginResult});
+        return res.json({message: "Successfully", result: loginResult});
     } catch (error) {
-        return res.status(403).json({message: error.message, data: error});
+        return res.status(401).json({message: error.message, result: error});
     }
   },
 
@@ -60,9 +60,9 @@ const AuthController = {
         req.body.password = authHelper.hashedPassword(req.body.password);
         const account = await accountService.createOne({...req.body, roleId: role._id});
         const centreStaff = await centreStaffService.createOne({...req.body, accountId: account._id});
-        return res.json({message: "Successfully", data: centreStaff});
+        return res.json({message: "Successfully", result: centreStaff});
     } catch (error) {
-        return res.status(400).json({message: error.message, data: error});
+        return res.status(400).json({message: error.message, result: error});
     }
   },
 
@@ -77,9 +77,9 @@ const AuthController = {
         req.body.password = authHelper.hashedPassword(req.body.password);
         const account = await accountService.createOne({...req.body, isActive: true});
         const parent = await parentService.createOne({accountId: account._id});
-        return res.json({message: "Successfully", data: parent});
+        return res.json({message: "Successfully", result: parent});
     } catch (error) {
-        return res.status(400).json({message: error.message, data: error});
+        return res.status(400).json({message: error.message, result: error});
     }
   }
 };
