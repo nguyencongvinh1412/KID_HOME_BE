@@ -1,3 +1,4 @@
+const wardModel = require("../models/ward.model");
 const addressService = require("../services/address.service");
 
 const addressController = {
@@ -12,7 +13,7 @@ const addressController = {
     getDistrictByCity: async (req, res) => {
         try {
             const cityCode = req.query.code;
-            if (cityCode) {
+            if (!cityCode) {
                 const districts = await addressService.getAllDistricts();
                 return res.json({message: "Successfully", result: districts});    
             }
@@ -25,7 +26,7 @@ const addressController = {
     getWardByDistrict: async(req, res) => {
         try {
             const districtCode = req.query.code;
-            if (districtCode) {
+            if (!districtCode) {
                 const wards = await addressService.getAllWards();
                 return res.json({message: "Successfully", result: wards});
             }

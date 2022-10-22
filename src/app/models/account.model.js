@@ -32,6 +32,10 @@ const Account = new Schema({
     type: Boolean,
     required: false,
     default: false
+  },
+  gender: {
+    type: String,
+    required: true,
   }
 }, {
   timestamps: true
