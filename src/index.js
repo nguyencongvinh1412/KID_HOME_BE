@@ -5,6 +5,7 @@ const server = http.createServer(app);
 const dotenv = require('dotenv');
 const PORT = process.env.PORT || 3010;
 const cors = require('cors');
+const originDomain = process.env.ORIGIN_DOMAIN || 'http://localhost:';
 
 // import routes
 const  authRoute = require('./resources/routers/auth.route');
@@ -27,5 +28,5 @@ app.use('/auth', authRoute);
 app.use('/address', addressRoute);
 
 server.listen(PORT, (req, res) => {
-    console.log(`listening http://localhost:${PORT}`);
+    console.log(`listening ${originDomain}${PORT}`);
 })

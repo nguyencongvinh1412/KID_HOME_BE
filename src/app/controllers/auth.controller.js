@@ -11,6 +11,7 @@ const AuthController = {
   registerCentreUser: async (req, res) => {
     try {
       const { accountInfo, centreInfo } = req.body;
+      console.log(req.body);
       if (!accountInfo || !centreInfo) {
         throw new Error("Invalid Input value");
       }

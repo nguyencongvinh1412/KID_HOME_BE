@@ -1,11 +1,10 @@
-const wardModel = require("../models/ward.model");
 const addressService = require("../services/address.service");
 
 const addressController = {
-    getAllCities: async (req, res) => {
+    getAllCities: async (req, res, next) => {
         try {
             const address = await addressService.getAllCities();
-            return res.json({message: "Successfully", result: address});
+            return res.status(200).json({message: "Successfully", result: address});
         } catch (error) {
             return res.status(500).json({message: error.message, result: error});
         }

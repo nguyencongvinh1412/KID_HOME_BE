@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
 const Account = new Schema({
+  avater: {
+    type: String,
+    required: false,
+  },
   username: {
     type: String,
     required: true,

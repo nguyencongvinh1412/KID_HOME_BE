@@ -53,7 +53,7 @@ const authHelper = {
     return jwt.sign(
       payload,
       process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: '20m' }
+      { expiresIn: '1d' }
     );
   },
 

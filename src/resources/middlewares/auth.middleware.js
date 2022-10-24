@@ -12,7 +12,7 @@ const authMiddleware = {
           res.status(403).json({message: "Forbidden", data: {}})
         }
 
-        req.user = user;
+        req.user = user._doc;
         next();
       })
     }
@@ -22,38 +22,42 @@ const authMiddleware = {
   },
 
   isSuperAdmin: (req, res, next) => {
-    this.verifyToken(req, res, () => {
+    authMiddleware.verifyToken(req, res, () => {
       if (req.user.roleId.name === ROLE.SUPER_ADMIN) {
         next();
+      } else {
+        return res.status(403).json({message: "Forbidden", data: {}});
       }
-      return res.status(403).json({message: "Forbidden", data: {}});
     });
   },
 
   isCentreAdmin: (req, res, next) => {
-    this.verifyToken(req, res, () => {
+    authMiddleware.verifyToken(req, res, () => {
       if (req.user.roleId.name === ROLE.CENTRE_ADMIN) {
         next();
+      } else {
+        return res.status(403).json({message: "Forbidden 123", data: {}});
       }
-      return res.status(403).json({message: "Forbidden", data: {}});
     })
   },
 
   isCentreStaff: (req, res, next) => {
-    this.verifyToken(req, res, () => {
+    authMiddleware.verifyToken(req, res, () => {
       if (req.user.roleId.name === ROLE.CENTRE_STAFF) {
         next();
+      } else {
+         return res.status(403).json({message: "Forbidden", data: {}});
       }
-      return res.status(403).json({message: "Forbidden", data: {}});
     })
   },
 
   isParent: (req, res, next) => {
-    this.verifyToken(req, res, () => {
+    authMiddleware.verifyToken(req, res, () => {
       if (req.user.roleId.name === ROLE.PARENT) {
         next();
+      } else {
+        res.status(403).json({message: "Forbidden", data: {}});
       }
-      return res.status(403).json({message: "Forbidden", data: {}});
     })
   }
 }
