@@ -1,0 +1,1302 @@
+[
+  {
+    "name": "Lexapro",
+    "address": "61933 Reindahl Lane",
+    "contactPhone": "+62 (718) 819-3190",
+    "openHours": {
+      "startTime": "7:33",
+      "endTime": "17:27"
+    },
+    "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+    "yearEstablished": "30/06/2015",
+    "isActive": true,
+    "rating": 6.22
+  },
+  {
+    "name": "Metformin Hydrochloride",
+    "address": "28986 Saint Paul Place",
+    "contactPhone": "+84 (222) 553-2945",
+    "openHours": {
+      "startTime": "8:33",
+      "endTime": "17:03"
+    },
+    "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+    "yearEstablished": "04/07/2009",
+    "isActive": true,
+    "rating": 3.56
+  },
+  {
+    "name": "RIte Aid",
+    "address": "902 South Center",
+    "contactPhone": "+86 (303) 114-9090",
+    "openHours": {
+      "startTime": "8:22",
+      "endTime": "16:53"
+    },
+    "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
+    "yearEstablished": "28/01/2017",
+    "isActive": true,
+    "rating": 7.6
+  },
+  {
+    "name": "Peter Island Sunscreen",
+    "address": "55 Pennsylvania Alley",
+    "contactPhone": "+55 (150) 987-1569",
+    "openHours": {
+      "startTime": "8:23",
+      "endTime": "16:50"
+    },
+    "description": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
+    "yearEstablished": "22/03/2010",
+    "isActive": true,
+    "rating": 1.4
+  },
+  {
+    "name": "Maximum-H",
+    "address": "418 Pine View Hill",
+    "contactPhone": "+55 (540) 598-1638",
+    "openHours": {
+      "startTime": "8:07",
+      "endTime": "17:33"
+    },
+    "description": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.",
+    "yearEstablished": "25/01/2002",
+    "isActive": true,
+    "rating": 1.08
+  },
+  {
+    "name": "ALTERNARIA TENUIS",
+    "address": "631 Bowman Court",
+    "contactPhone": "+86 (683) 573-7060",
+    "openHours": {
+      "startTime": "7:17",
+      "endTime": "17:51"
+    },
+    "description": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+    "yearEstablished": "23/03/2005",
+    "isActive": true,
+    "rating": 4.58
+  },
+  {
+    "name": "Hydrocodone Bitartrate and Acetaminophen Tablets",
+    "address": "7 Blackbird Court",
+    "contactPhone": "+86 (313) 501-6082",
+    "openHours": {
+      "startTime": "7:07",
+      "endTime": "16:07"
+    },
+    "description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+    "yearEstablished": "18/07/2019",
+    "isActive": true,
+    "rating": 1.41
+  },
+  {
+    "name": "Lenscale Quailbrush",
+    "address": "851 Waxwing Junction",
+    "contactPhone": "+86 (121) 727-3704",
+    "openHours": {
+      "startTime": "8:24",
+      "endTime": "16:05"
+    },
+    "description": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
+    "yearEstablished": "13/05/2018",
+    "isActive": true,
+    "rating": 9.3
+  },
+  {
+    "name": "Sunmark Stomach relief",
+    "address": "788 Del Sol Hill",
+    "contactPhone": "+86 (291) 962-7464",
+    "openHours": {
+      "startTime": "8:57",
+      "endTime": "16:08"
+    },
+    "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.",
+    "yearEstablished": "23/05/2011",
+    "isActive": true,
+    "rating": 6.44
+  },
+  {
+    "name": "SELENIUM SULFIDE",
+    "address": "85410 Union Circle",
+    "contactPhone": "+593 (592) 918-6977",
+    "openHours": {
+      "startTime": "8:32",
+      "endTime": "17:05"
+    },
+    "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+    "yearEstablished": "02/06/2018",
+    "isActive": true,
+    "rating": 3.64
+  },
+  {
+    "name": "Viagra",
+    "address": "73416 Norway Maple Alley",
+    "contactPhone": "+994 (765) 285-9594",
+    "openHours": {
+      "startTime": "8:49",
+      "endTime": "16:46"
+    },
+    "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+    "yearEstablished": "26/02/2003",
+    "isActive": true,
+    "rating": 0.68
+  },
+  {
+    "name": "Shopko Antibacterial Foaming Hand Sanitizer",
+    "address": "4 Leroy Way",
+    "contactPhone": "+86 (423) 263-5738",
+    "openHours": {
+      "startTime": "7:25",
+      "endTime": "17:02"
+    },
+    "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+    "yearEstablished": "07/07/2002",
+    "isActive": true,
+    "rating": 7.3
+  },
+  {
+    "name": "Ketoconazole",
+    "address": "7 Ilene Alley",
+    "contactPhone": "+48 (415) 531-3193",
+    "openHours": {
+      "startTime": "8:43",
+      "endTime": "16:24"
+    },
+    "description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\n\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+    "yearEstablished": "15/12/2014",
+    "isActive": true,
+    "rating": 7.93
+  },
+  {
+    "name": "Citalopram",
+    "address": "1 Forest Run Circle",
+    "contactPhone": "+86 (413) 661-7449",
+    "openHours": {
+      "startTime": "8:48",
+      "endTime": "17:38"
+    },
+    "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+    "yearEstablished": "05/10/2002",
+    "isActive": true,
+    "rating": 1.31
+  },
+  {
+    "name": "OXYGEN",
+    "address": "395 Nancy Center",
+    "contactPhone": "+963 (470) 775-5317",
+    "openHours": {
+      "startTime": "7:15",
+      "endTime": "17:53"
+    },
+    "description": "In congue. Etiam justo. Etiam pretium iaculis justo.\n\nIn hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+    "yearEstablished": "05/06/2006",
+    "isActive": true,
+    "rating": 4.19
+  },
+  {
+    "name": "HEADACHE FLATULENCE",
+    "address": "496 High Crossing Trail",
+    "contactPhone": "+212 (295) 553-9214",
+    "openHours": {
+      "startTime": "8:14",
+      "endTime": "17:49"
+    },
+    "description": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+    "yearEstablished": "15/04/2020",
+    "isActive": true,
+    "rating": 2.59
+  },
+  {
+    "name": "tussin cough dm",
+    "address": "60959 Nelson Lane",
+    "contactPhone": "+351 (311) 220-6984",
+    "openHours": {
+      "startTime": "7:31",
+      "endTime": "16:54"
+    },
+    "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+    "yearEstablished": "07/09/2018",
+    "isActive": true,
+    "rating": 6.19
+  },
+  {
+    "name": "YSNORE",
+    "address": "5 Old Shore Plaza",
+    "contactPhone": "+62 (529) 793-7678",
+    "openHours": {
+      "startTime": "7:31",
+      "endTime": "17:27"
+    },
+    "description": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+    "yearEstablished": "17/02/2019",
+    "isActive": true,
+    "rating": 8.5
+  },
+  {
+    "name": "Equisetum cum sulfure tosta 6",
+    "address": "06 Michigan Point",
+    "contactPhone": "+86 (656) 580-9947",
+    "openHours": {
+      "startTime": "8:29",
+      "endTime": "16:32"
+    },
+    "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+    "yearEstablished": "02/02/2010",
+    "isActive": true,
+    "rating": 4.98
+  },
+  {
+    "name": "Cefpodoxime Proxetil",
+    "address": "5831 Mayfield Terrace",
+    "contactPhone": "+62 (652) 497-5010",
+    "openHours": {
+      "startTime": "8:51",
+      "endTime": "16:22"
+    },
+    "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+    "yearEstablished": "28/05/1999",
+    "isActive": true,
+    "rating": 4.75
+  },
+  {
+    "name": "rexall ibuprofen",
+    "address": "809 Debra Center",
+    "contactPhone": "+46 (777) 223-9803",
+    "openHours": {
+      "startTime": "7:05",
+      "endTime": "17:41"
+    },
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+    "yearEstablished": "04/12/2018",
+    "isActive": true,
+    "rating": 7.06
+  },
+  {
+    "name": "Petroleum",
+    "address": "26562 Crownhardt Street",
+    "contactPhone": "+86 (974) 171-7326",
+    "openHours": {
+      "startTime": "7:47",
+      "endTime": "17:27"
+    },
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+    "yearEstablished": "17/11/2016",
+    "isActive": true,
+    "rating": 8.5
+  },
+  {
+    "name": "PROSOPIS JULIFLORA POLLEN",
+    "address": "737 Merrick Drive",
+    "contactPhone": "+86 (640) 343-8195",
+    "openHours": {
+      "startTime": "8:52",
+      "endTime": "16:10"
+    },
+    "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+    "yearEstablished": "24/06/2020",
+    "isActive": true,
+    "rating": 7.34
+  },
+  {
+    "name": "ULTRASOL",
+    "address": "844 Mayfield Court",
+    "contactPhone": "+93 (204) 949-8520",
+    "openHours": {
+      "startTime": "7:20",
+      "endTime": "17:31"
+    },
+    "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+    "yearEstablished": "20/09/2015",
+    "isActive": true,
+    "rating": 5.49
+  },
+  {
+    "name": "ATORVASTATIN CALCIUM",
+    "address": "8 Roxbury Street",
+    "contactPhone": "+33 (299) 326-2999",
+    "openHours": {
+      "startTime": "7:42",
+      "endTime": "16:59"
+    },
+    "description": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\n\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+    "yearEstablished": "08/09/2017",
+    "isActive": true,
+    "rating": 3.07
+  },
+  {
+    "name": "Pro-Flex",
+    "address": "84958 Talisman Parkway",
+    "contactPhone": "+86 (955) 206-9836",
+    "openHours": {
+      "startTime": "8:56",
+      "endTime": "16:30"
+    },
+    "description": "In congue. Etiam justo. Etiam pretium iaculis justo.",
+    "yearEstablished": "11/09/2011",
+    "isActive": true,
+    "rating": 7.66
+  },
+  {
+    "name": "Lucky Antibacterial Hand Soap",
+    "address": "1 Petterle Lane",
+    "contactPhone": "+387 (524) 401-7963",
+    "openHours": {
+      "startTime": "7:43",
+      "endTime": "16:38"
+    },
+    "description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+    "yearEstablished": "13/11/1999",
+    "isActive": true,
+    "rating": 3.12
+  },
+  {
+    "name": "Sulfasalazine",
+    "address": "1378 Evergreen Trail",
+    "contactPhone": "+60 (178) 248-3502",
+    "openHours": {
+      "startTime": "7:05",
+      "endTime": "16:51"
+    },
+    "description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+    "yearEstablished": "19/05/2021",
+    "isActive": true,
+    "rating": 0.16
+  },
+  {
+    "name": "Artifical Tears",
+    "address": "55332 Jenna Parkway",
+    "contactPhone": "+61 (137) 882-3583",
+    "openHours": {
+      "startTime": "7:06",
+      "endTime": "16:47"
+    },
+    "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+    "yearEstablished": "07/09/2009",
+    "isActive": true,
+    "rating": 4.57
+  },
+  {
+    "name": "NICOTINE",
+    "address": "7620 Manley Road",
+    "contactPhone": "+39 (389) 731-7127",
+    "openHours": {
+      "startTime": "8:17",
+      "endTime": "16:10"
+    },
+    "description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
+    "yearEstablished": "08/09/2008",
+    "isActive": true,
+    "rating": 1.42
+  },
+  {
+    "name": "Azelastine Hydrochloride",
+    "address": "13 Buhler Avenue",
+    "contactPhone": "+46 (780) 187-0944",
+    "openHours": {
+      "startTime": "7:54",
+      "endTime": "17:27"
+    },
+    "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+    "yearEstablished": "07/05/2005",
+    "isActive": true,
+    "rating": 3.66
+  },
+  {
+    "name": "Strawberry Hand Sanitizer",
+    "address": "8328 Aberg Crossing",
+    "contactPhone": "+351 (425) 479-5463",
+    "openHours": {
+      "startTime": "7:33",
+      "endTime": "16:21"
+    },
+    "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+    "yearEstablished": "23/06/2013",
+    "isActive": true,
+    "rating": 6.93
+  },
+  {
+    "name": "Amoxicillin",
+    "address": "3 Swallow Alley",
+    "contactPhone": "+48 (481) 617-9010",
+    "openHours": {
+      "startTime": "8:13",
+      "endTime": "17:19"
+    },
+    "description": "Sed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+    "yearEstablished": "13/12/2000",
+    "isActive": true,
+    "rating": 7.69
+  },
+  {
+    "name": "Mexiletine Hydrochloride",
+    "address": "985 Meadow Valley Road",
+    "contactPhone": "+380 (999) 105-8534",
+    "openHours": {
+      "startTime": "8:24",
+      "endTime": "17:01"
+    },
+    "description": "Fusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
+    "yearEstablished": "18/06/2018",
+    "isActive": true,
+    "rating": 3.78
+  },
+  {
+    "name": "LE TECHNIQ",
+    "address": "435 Barnett Terrace",
+    "contactPhone": "+380 (615) 924-3775",
+    "openHours": {
+      "startTime": "8:34",
+      "endTime": "16:14"
+    },
+    "description": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+    "yearEstablished": "12/11/2006",
+    "isActive": true,
+    "rating": 7.72
+  },
+  {
+    "name": "Axe",
+    "address": "2281 Express Plaza",
+    "contactPhone": "+41 (140) 548-2095",
+    "openHours": {
+      "startTime": "8:05",
+      "endTime": "16:55"
+    },
+    "description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+    "yearEstablished": "10/07/2010",
+    "isActive": true,
+    "rating": 1.23
+  },
+  {
+    "name": "Zidovudine",
+    "address": "9 Bunker Hill Lane",
+    "contactPhone": "+256 (127) 960-5320",
+    "openHours": {
+      "startTime": "7:34",
+      "endTime": "17:23"
+    },
+    "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
+    "yearEstablished": "01/07/2020",
+    "isActive": true,
+    "rating": 6.38
+  },
+  {
+    "name": "Cultivated Rye",
+    "address": "809 Hoffman Plaza",
+    "contactPhone": "+46 (233) 806-3942",
+    "openHours": {
+      "startTime": "7:24",
+      "endTime": "16:55"
+    },
+    "description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+    "yearEstablished": "27/05/2019",
+    "isActive": true,
+    "rating": 1.65
+  },
+  {
+    "name": "Tamsulosin Hydrochloride",
+    "address": "0 Toban Park",
+    "contactPhone": "+46 (648) 460-4579",
+    "openHours": {
+      "startTime": "7:54",
+      "endTime": "17:38"
+    },
+    "description": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+    "yearEstablished": "24/01/2001",
+    "isActive": true,
+    "rating": 1.72
+  },
+  {
+    "name": "Miconazole 3 Combination Pack",
+    "address": "9 Gulseth Place",
+    "contactPhone": "+57 (913) 164-5684",
+    "openHours": {
+      "startTime": "7:37",
+      "endTime": "16:27"
+    },
+    "description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+    "yearEstablished": "17/09/2006",
+    "isActive": true,
+    "rating": 2.4
+  },
+  {
+    "name": "Satos Corn and Callus Remover",
+    "address": "77845 Center Circle",
+    "contactPhone": "+62 (185) 394-2415",
+    "openHours": {
+      "startTime": "8:59",
+      "endTime": "17:42"
+    },
+    "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+    "yearEstablished": "16/07/2006",
+    "isActive": true,
+    "rating": 7.96
+  },
+  {
+    "name": "ENALAPRIL MALEATE",
+    "address": "5 Caliangt Lane",
+    "contactPhone": "+86 (274) 224-5773",
+    "openHours": {
+      "startTime": "8:43",
+      "endTime": "17:34"
+    },
+    "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+    "yearEstablished": "27/03/2017",
+    "isActive": true,
+    "rating": 2.56
+  },
+  {
+    "name": "PediaCare Infants",
+    "address": "6 Roxbury Terrace",
+    "contactPhone": "+63 (693) 115-9466",
+    "openHours": {
+      "startTime": "8:25",
+      "endTime": "16:20"
+    },
+    "description": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\n\nNam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.\n\nCurabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+    "yearEstablished": "04/01/2016",
+    "isActive": true,
+    "rating": 1.03
+  },
+  {
+    "name": "Carvedilol",
+    "address": "5498 Schiller Parkway",
+    "contactPhone": "+62 (904) 545-8937",
+    "openHours": {
+      "startTime": "8:58",
+      "endTime": "16:58"
+    },
+    "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
+    "yearEstablished": "26/07/2003",
+    "isActive": true,
+    "rating": 6.34
+  },
+  {
+    "name": "MAKESENSE",
+    "address": "9 Briar Crest Trail",
+    "contactPhone": "+51 (245) 595-4739",
+    "openHours": {
+      "startTime": "7:01",
+      "endTime": "16:02"
+    },
+    "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+    "yearEstablished": "12/07/2008",
+    "isActive": true,
+    "rating": 1.82
+  },
+  {
+    "name": "Anxietin",
+    "address": "5 Heath Trail",
+    "contactPhone": "+351 (589) 917-7254",
+    "openHours": {
+      "startTime": "7:33",
+      "endTime": "16:18"
+    },
+    "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+    "yearEstablished": "09/06/2015",
+    "isActive": true,
+    "rating": 3.27
+  },
+  {
+    "name": "Smart Sense NightTime DayTime",
+    "address": "0 Jana Trail",
+    "contactPhone": "+62 (692) 600-1334",
+    "openHours": {
+      "startTime": "8:48",
+      "endTime": "17:11"
+    },
+    "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+    "yearEstablished": "25/10/2021",
+    "isActive": true,
+    "rating": 8.76
+  },
+  {
+    "name": "arthritis pain relief",
+    "address": "2109 Tomscot Crossing",
+    "contactPhone": "+850 (247) 130-4907",
+    "openHours": {
+      "startTime": "7:12",
+      "endTime": "17:37"
+    },
+    "description": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+    "yearEstablished": "22/04/2002",
+    "isActive": true,
+    "rating": 7.45
+  },
+  {
+    "name": "Budesonide",
+    "address": "3431 Birchwood Hill",
+    "contactPhone": "+86 (482) 253-5271",
+    "openHours": {
+      "startTime": "8:28",
+      "endTime": "16:32"
+    },
+    "description": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\n\nNam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+    "yearEstablished": "20/10/2005",
+    "isActive": true,
+    "rating": 9.02
+  },
+  {
+    "name": "GABAPENTIN",
+    "address": "710 Summer Ridge Drive",
+    "contactPhone": "+86 (460) 985-1182",
+    "openHours": {
+      "startTime": "7:43",
+      "endTime": "17:48"
+    },
+    "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+    "yearEstablished": "20/11/2013",
+    "isActive": true,
+    "rating": 6.09
+  },
+  {
+    "name": "Amnesteem",
+    "address": "6430 Mayfield Place",
+    "contactPhone": "+33 (603) 584-2539",
+    "openHours": {
+      "startTime": "7:14",
+      "endTime": "17:19"
+    },
+    "description": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
+    "yearEstablished": "24/02/2012",
+    "isActive": true,
+    "rating": 4.05
+  },
+  {
+    "name": "Cough",
+    "address": "81 Northport Plaza",
+    "contactPhone": "+98 (165) 116-5408",
+    "openHours": {
+      "startTime": "8:49",
+      "endTime": "17:46"
+    },
+    "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+    "yearEstablished": "18/01/2013",
+    "isActive": true,
+    "rating": 6.62
+  },
+  {
+    "name": "ACD-A",
+    "address": "1379 Tennyson Alley",
+    "contactPhone": "+351 (206) 644-0218",
+    "openHours": {
+      "startTime": "8:00",
+      "endTime": "16:16"
+    },
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+    "yearEstablished": "18/11/2014",
+    "isActive": true,
+    "rating": 2.51
+  },
+  {
+    "name": "Metformin Hydrochloride",
+    "address": "172 Hovde Drive",
+    "contactPhone": "+7 (136) 404-4011",
+    "openHours": {
+      "startTime": "7:27",
+      "endTime": "17:26"
+    },
+    "description": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.\n\nCurabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+    "yearEstablished": "14/01/2010",
+    "isActive": true,
+    "rating": 8.98
+  },
+  {
+    "name": "Olanzapine",
+    "address": "6509 Acker Street",
+    "contactPhone": "+55 (678) 232-1180",
+    "openHours": {
+      "startTime": "8:46",
+      "endTime": "16:22"
+    },
+    "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+    "yearEstablished": "08/01/2014",
+    "isActive": true,
+    "rating": 2.81
+  },
+  {
+    "name": "Assured Vaporizing Chest Rub",
+    "address": "07023 Killdeer Parkway",
+    "contactPhone": "+86 (119) 962-4081",
+    "openHours": {
+      "startTime": "7:24",
+      "endTime": "17:28"
+    },
+    "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.\n\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\n\nInteger tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
+    "yearEstablished": "25/01/1999",
+    "isActive": true,
+    "rating": 8.85
+  },
+  {
+    "name": "equate migraine relief",
+    "address": "64 Kedzie Lane",
+    "contactPhone": "+30 (372) 164-9764",
+    "openHours": {
+      "startTime": "7:36",
+      "endTime": "17:16"
+    },
+    "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
+    "yearEstablished": "18/08/2008",
+    "isActive": true,
+    "rating": 7.73
+  },
+  {
+    "name": "Ferrlecit",
+    "address": "3 Bobwhite Place",
+    "contactPhone": "+373 (216) 178-1932",
+    "openHours": {
+      "startTime": "8:07",
+      "endTime": "17:32"
+    },
+    "description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+    "yearEstablished": "28/03/2000",
+    "isActive": true,
+    "rating": 5.51
+  },
+  {
+    "name": "MEND AID Antibacterial Adhesive Bandages",
+    "address": "33496 Westport Place",
+    "contactPhone": "+62 (256) 775-2665",
+    "openHours": {
+      "startTime": "7:03",
+      "endTime": "17:08"
+    },
+    "description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+    "yearEstablished": "21/02/2017",
+    "isActive": true,
+    "rating": 8.11
+  },
+  {
+    "name": "Scarguard MD Physicians Formula",
+    "address": "08 Lillian Court",
+    "contactPhone": "+86 (699) 500-1737",
+    "openHours": {
+      "startTime": "7:40",
+      "endTime": "17:25"
+    },
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+    "yearEstablished": "19/01/2010",
+    "isActive": true,
+    "rating": 1.47
+  },
+  {
+    "name": "MINERALIZE",
+    "address": "650 Service Court",
+    "contactPhone": "+7 (982) 434-8756",
+    "openHours": {
+      "startTime": "8:13",
+      "endTime": "16:24"
+    },
+    "description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+    "yearEstablished": "28/10/2014",
+    "isActive": true,
+    "rating": 0.36
+  },
+  {
+    "name": "Green Guard Burn First Aid",
+    "address": "52172 Washington Junction",
+    "contactPhone": "+46 (495) 303-3603",
+    "openHours": {
+      "startTime": "8:27",
+      "endTime": "17:02"
+    },
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+    "yearEstablished": "12/11/2020",
+    "isActive": true,
+    "rating": 8.79
+  },
+  {
+    "name": "Marcaine",
+    "address": "50229 Jackson Trail",
+    "contactPhone": "+7 (764) 919-2702",
+    "openHours": {
+      "startTime": "8:07",
+      "endTime": "17:05"
+    },
+    "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+    "yearEstablished": "06/03/2017",
+    "isActive": true,
+    "rating": 9.75
+  },
+  {
+    "name": "Fluoxetine",
+    "address": "3168 Esch Terrace",
+    "contactPhone": "+63 (865) 406-7771",
+    "openHours": {
+      "startTime": "8:39",
+      "endTime": "17:11"
+    },
+    "description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+    "yearEstablished": "22/06/2013",
+    "isActive": true,
+    "rating": 5.15
+  },
+  {
+    "name": "MAXALT-MLT",
+    "address": "91 Waywood Crossing",
+    "contactPhone": "+358 (459) 154-4817",
+    "openHours": {
+      "startTime": "7:12",
+      "endTime": "16:28"
+    },
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+    "yearEstablished": "21/05/2008",
+    "isActive": true,
+    "rating": 8.18
+  },
+  {
+    "name": "Metronidazole",
+    "address": "7 Village Court",
+    "contactPhone": "+7 (357) 579-3209",
+    "openHours": {
+      "startTime": "7:20",
+      "endTime": "16:56"
+    },
+    "description": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
+    "yearEstablished": "03/05/2021",
+    "isActive": true,
+    "rating": 4.09
+  },
+  {
+    "name": "ACZONE",
+    "address": "57 Bowman Street",
+    "contactPhone": "+46 (116) 927-9290",
+    "openHours": {
+      "startTime": "7:19",
+      "endTime": "16:21"
+    },
+    "description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+    "yearEstablished": "21/04/2013",
+    "isActive": true,
+    "rating": 4.77
+  },
+  {
+    "name": "Novamine",
+    "address": "13 Manley Plaza",
+    "contactPhone": "+62 (627) 378-7801",
+    "openHours": {
+      "startTime": "7:03",
+      "endTime": "17:38"
+    },
+    "description": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
+    "yearEstablished": "06/11/2012",
+    "isActive": true,
+    "rating": 2.8
+  },
+  {
+    "name": "Donepezil Hydrochloride",
+    "address": "723 Lien Park",
+    "contactPhone": "+86 (790) 349-3822",
+    "openHours": {
+      "startTime": "8:06",
+      "endTime": "17:06"
+    },
+    "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+    "yearEstablished": "10/03/2008",
+    "isActive": true,
+    "rating": 2.16
+  },
+  {
+    "name": "Sufentanil Citrate",
+    "address": "9 8th Road",
+    "contactPhone": "+55 (850) 676-2092",
+    "openHours": {
+      "startTime": "8:27",
+      "endTime": "16:59"
+    },
+    "description": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
+    "yearEstablished": "31/07/1999",
+    "isActive": true,
+    "rating": 2.07
+  },
+  {
+    "name": "4 in 1 Pressed Mineral SPF 15 Porcelain",
+    "address": "8378 Northfield Way",
+    "contactPhone": "+351 (838) 535-7704",
+    "openHours": {
+      "startTime": "8:49",
+      "endTime": "16:27"
+    },
+    "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.\n\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+    "yearEstablished": "19/01/2007",
+    "isActive": true,
+    "rating": 8.6
+  },
+  {
+    "name": "REFRESH OPTIVE",
+    "address": "3199 Homewood Avenue",
+    "contactPhone": "+591 (837) 687-8060",
+    "openHours": {
+      "startTime": "7:55",
+      "endTime": "16:12"
+    },
+    "description": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+    "yearEstablished": "14/01/2019",
+    "isActive": true,
+    "rating": 4.55
+  },
+  {
+    "name": "divalproex sodium",
+    "address": "768 Del Mar Road",
+    "contactPhone": "+63 (547) 677-3977",
+    "openHours": {
+      "startTime": "7:43",
+      "endTime": "17:21"
+    },
+    "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+    "yearEstablished": "17/09/2010",
+    "isActive": true,
+    "rating": 9.74
+  },
+  {
+    "name": "Methotrexate",
+    "address": "75 Talmadge Point",
+    "contactPhone": "+62 (754) 557-2224",
+    "openHours": {
+      "startTime": "8:13",
+      "endTime": "17:29"
+    },
+    "description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+    "yearEstablished": "06/09/2011",
+    "isActive": true,
+    "rating": 6.17
+  },
+  {
+    "name": "Rivastigmine Tartrate",
+    "address": "2 Rigney Place",
+    "contactPhone": "+86 (768) 936-1146",
+    "openHours": {
+      "startTime": "7:48",
+      "endTime": "17:20"
+    },
+    "description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+    "yearEstablished": "28/12/2006",
+    "isActive": true,
+    "rating": 2.83
+  },
+  {
+    "name": "CEFPROZIL",
+    "address": "69392 Grayhawk Drive",
+    "contactPhone": "+55 (636) 648-9517",
+    "openHours": {
+      "startTime": "8:07",
+      "endTime": "16:53"
+    },
+    "description": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+    "yearEstablished": "04/11/2020",
+    "isActive": true,
+    "rating": 9.14
+  },
+  {
+    "name": "Long Lasting Finish with Comfort Serum",
+    "address": "23 Northfield Court",
+    "contactPhone": "+359 (736) 198-5051",
+    "openHours": {
+      "startTime": "8:22",
+      "endTime": "16:43"
+    },
+    "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+    "yearEstablished": "27/06/2009",
+    "isActive": true,
+    "rating": 7.08
+  },
+  {
+    "name": "Fragmin",
+    "address": "8 South Pass",
+    "contactPhone": "+54 (146) 275-2209",
+    "openHours": {
+      "startTime": "8:00",
+      "endTime": "17:56"
+    },
+    "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
+    "yearEstablished": "31/12/2017",
+    "isActive": true,
+    "rating": 4.99
+  },
+  {
+    "name": "Insomnia Plus",
+    "address": "427 Tony Center",
+    "contactPhone": "+63 (594) 961-7554",
+    "openHours": {
+      "startTime": "8:19",
+      "endTime": "17:05"
+    },
+    "description": "Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
+    "yearEstablished": "08/02/2000",
+    "isActive": true,
+    "rating": 6.38
+  },
+  {
+    "name": "FUSARIUM OXYSPORUM VASINFECTUM",
+    "address": "63022 Southridge Road",
+    "contactPhone": "+1 (520) 104-3842",
+    "openHours": {
+      "startTime": "8:18",
+      "endTime": "17:23"
+    },
+    "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+    "yearEstablished": "05/04/2006",
+    "isActive": true,
+    "rating": 8.0
+  },
+  {
+    "name": "Pasta de Lassar Andromaco",
+    "address": "1679 Thackeray Hill",
+    "contactPhone": "+66 (707) 538-6964",
+    "openHours": {
+      "startTime": "8:34",
+      "endTime": "16:11"
+    },
+    "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+    "yearEstablished": "05/05/2013",
+    "isActive": true,
+    "rating": 2.57
+  },
+  {
+    "name": "WHP Be gone Headache",
+    "address": "430 Lotheville Point",
+    "contactPhone": "+55 (782) 621-7200",
+    "openHours": {
+      "startTime": "8:14",
+      "endTime": "16:12"
+    },
+    "description": "Phasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
+    "yearEstablished": "20/11/2017",
+    "isActive": true,
+    "rating": 2.4
+  },
+  {
+    "name": "LBEL HYDRATESS",
+    "address": "9566 Autumn Leaf Center",
+    "contactPhone": "+7 (588) 897-8133",
+    "openHours": {
+      "startTime": "7:12",
+      "endTime": "17:22"
+    },
+    "description": "Phasellus in felis. Donec semper sapien a libero. Nam dui.",
+    "yearEstablished": "21/10/2012",
+    "isActive": true,
+    "rating": 3.12
+  },
+  {
+    "name": "POTASSIUM HYDROXIDE",
+    "address": "2 Pierstorff Lane",
+    "contactPhone": "+420 (426) 657-6517",
+    "openHours": {
+      "startTime": "7:17",
+      "endTime": "17:41"
+    },
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+    "yearEstablished": "08/03/2014",
+    "isActive": true,
+    "rating": 0.74
+  },
+  {
+    "name": "Levetiracetam",
+    "address": "55 Bay Park",
+    "contactPhone": "+86 (779) 783-1496",
+    "openHours": {
+      "startTime": "8:50",
+      "endTime": "17:09"
+    },
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+    "yearEstablished": "27/11/2008",
+    "isActive": true,
+    "rating": 9.83
+  },
+  {
+    "name": "JUVISYNC",
+    "address": "673 Prairie Rose Crossing",
+    "contactPhone": "+255 (804) 376-4515",
+    "openHours": {
+      "startTime": "8:48",
+      "endTime": "16:53"
+    },
+    "description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.",
+    "yearEstablished": "25/06/2012",
+    "isActive": true,
+    "rating": 6.67
+  },
+  {
+    "name": "XtraCare Hand Sanitizer",
+    "address": "7836 Kipling Avenue",
+    "contactPhone": "+63 (930) 654-9382",
+    "openHours": {
+      "startTime": "8:09",
+      "endTime": "17:32"
+    },
+    "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+    "yearEstablished": "03/05/2012",
+    "isActive": true,
+    "rating": 1.17
+  },
+  {
+    "name": "TERBUTALINE SULFATE",
+    "address": "97 Buell Plaza",
+    "contactPhone": "+1 (329) 938-8048",
+    "openHours": {
+      "startTime": "8:27",
+      "endTime": "17:40"
+    },
+    "description": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+    "yearEstablished": "12/03/2010",
+    "isActive": true,
+    "rating": 4.16
+  },
+  {
+    "name": "Codfish",
+    "address": "2544 Kim Plaza",
+    "contactPhone": "+58 (329) 713-4002",
+    "openHours": {
+      "startTime": "8:24",
+      "endTime": "17:37"
+    },
+    "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+    "yearEstablished": "27/09/2002",
+    "isActive": true,
+    "rating": 8.1
+  },
+  {
+    "name": "Celeragesic",
+    "address": "36249 Bluejay Crossing",
+    "contactPhone": "+62 (767) 629-8454",
+    "openHours": {
+      "startTime": "7:49",
+      "endTime": "17:01"
+    },
+    "description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+    "yearEstablished": "16/01/2011",
+    "isActive": true,
+    "rating": 5.88
+  },
+  {
+    "name": "AVANDARYL",
+    "address": "444 Redwing Crossing",
+    "contactPhone": "+1 (617) 212-3542",
+    "openHours": {
+      "startTime": "7:08",
+      "endTime": "17:56"
+    },
+    "description": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
+    "yearEstablished": "27/08/1999",
+    "isActive": true,
+    "rating": 3.62
+  },
+  {
+    "name": "TRITICUM AESTIVUM POLLEN",
+    "address": "064 Eagle Crest Alley",
+    "contactPhone": "+48 (509) 987-6213",
+    "openHours": {
+      "startTime": "7:46",
+      "endTime": "17:54"
+    },
+    "description": "Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+    "yearEstablished": "20/01/2009",
+    "isActive": true,
+    "rating": 0.97
+  },
+  {
+    "name": "ALMOST POWDER MAKEUP",
+    "address": "7402 Melody Court",
+    "contactPhone": "+1 (716) 990-1475",
+    "openHours": {
+      "startTime": "8:09",
+      "endTime": "16:36"
+    },
+    "description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+    "yearEstablished": "21/10/2003",
+    "isActive": true,
+    "rating": 8.19
+  },
+  {
+    "name": "Pyrazinamide",
+    "address": "8 Northridge Road",
+    "contactPhone": "+1 (952) 853-8812",
+    "openHours": {
+      "startTime": "8:31",
+      "endTime": "16:26"
+    },
+    "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+    "yearEstablished": "23/01/2011",
+    "isActive": true,
+    "rating": 9.5
+  },
+  {
+    "name": "CVS Hemorrhoidal Topical Analgesic",
+    "address": "6132 Union Terrace",
+    "contactPhone": "+86 (679) 656-5895",
+    "openHours": {
+      "startTime": "8:01",
+      "endTime": "17:25"
+    },
+    "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+    "yearEstablished": "05/03/2002",
+    "isActive": true,
+    "rating": 7.08
+  },
+  {
+    "name": "Lamotrigine",
+    "address": "7824 Mallory Circle",
+    "contactPhone": "+7 (119) 135-1763",
+    "openHours": {
+      "startTime": "7:24",
+      "endTime": "16:01"
+    },
+    "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+    "yearEstablished": "28/11/2004",
+    "isActive": true,
+    "rating": 8.13
+  },
+  {
+    "name": "Perphenazine",
+    "address": "052 Pearson Trail",
+    "contactPhone": "+7 (899) 348-4119",
+    "openHours": {
+      "startTime": "8:56",
+      "endTime": "16:55"
+    },
+    "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+    "yearEstablished": "15/06/2006",
+    "isActive": true,
+    "rating": 8.17
+  },
+  {
+    "name": "Witch Hazel",
+    "address": "0987 Fieldstone Center",
+    "contactPhone": "+62 (658) 129-4018",
+    "openHours": {
+      "startTime": "8:45",
+      "endTime": "16:45"
+    },
+    "description": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+    "yearEstablished": "25/03/2018",
+    "isActive": true,
+    "rating": 1.57
+  },
+  {
+    "name": "TAZICEF",
+    "address": "45 Cottonwood Parkway",
+    "contactPhone": "+62 (541) 598-0226",
+    "openHours": {
+      "startTime": "7:48",
+      "endTime": "16:23"
+    },
+    "description": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+    "yearEstablished": "01/09/2002",
+    "isActive": true,
+    "rating": 2.63
+  },
+  {
+    "name": "Regular Strength Aspirin EC",
+    "address": "46 East Place",
+    "contactPhone": "+976 (650) 272-5421",
+    "openHours": {
+      "startTime": "8:25",
+      "endTime": "17:01"
+    },
+    "description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
+    "yearEstablished": "24/11/2018",
+    "isActive": true,
+    "rating": 9.97
+  }
+]

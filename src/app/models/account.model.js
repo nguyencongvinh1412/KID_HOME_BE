@@ -25,7 +25,7 @@ const Account = new Schema({
   phoneNumber: {
     type: String,
     minLength: 10,
-    maxLength: 11,
+    maxLength: 20,
     required: false,
   },
   displayAddress: {

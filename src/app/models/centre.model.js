@@ -15,7 +15,7 @@ const Centre = new Schema({
   contactPhone: {
     type: String,
     minLength: 10,
-    maxLength: 11,
+    maxLength: 20,
   },
   openHours: {
     startTime: {
@@ -43,7 +43,7 @@ const Centre = new Schema({
     required: true,
   },
   yearEstablished: {
-    type: Number,
+    type: String,
     required: true,
   },
   isActive: {

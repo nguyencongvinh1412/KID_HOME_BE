@@ -22,10 +22,6 @@ const AuthController = {
       const account = await accountService.createOne(accountInfo);
       const centre = await centreService.createOne(centreInfo);
 
-      if (centreInfo.images) {
-
-      }
-
       const centreUser = await centreUserService.createOne({
         centreId: centre._id,
         accountId: account._id,
