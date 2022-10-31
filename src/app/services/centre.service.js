@@ -49,7 +49,7 @@ const centreService = {
         centreQuery.match({});
       }
       const [centres, total] = await Promise.all([
-        centreQuery.limit(limit).skip(skip),
+        centreQuery.skip(skip).limit(limit),
         centreModel.count(),
       ]);
       return { centres, total };

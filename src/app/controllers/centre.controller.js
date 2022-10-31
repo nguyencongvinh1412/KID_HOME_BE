@@ -36,7 +36,7 @@ const centreController = {
         .status(200)
         .json({
           message: "Successfully",
-          results: { centres, paginging: { total, limit, page } },
+          result: { centres, paging: { total, limit, page } },
         });
     } catch (error) {
       return res.status(500).json({ message: error.message, result: error });
