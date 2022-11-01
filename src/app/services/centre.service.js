@@ -2,6 +2,7 @@ const centreModel = require("../models/centre.model");
 const fs = require("fs");
 const path = require("path");
 const imageModel = require("../models/image.model");
+const ObjectId = require('mongoose').Types.ObjectId;
 
 const centreService = {
   createOne: async (data) => {
@@ -34,7 +35,7 @@ const centreService = {
   },
   getMany: async (data) => {
     try {
-      let { filter, limit, skip } = data;
+      let { name, limit, skip } = data;
       limit = Number.parseInt(limit);
       skip = Number.parseInt(skip);
       let centreQuery = centreModel.aggregate().lookup({
@@ -43,16 +44,35 @@ const centreService = {
         foreignField: "centreId",
         as: "images",
       });
-      if (filter !== undefined) {
-        centreQuery.match(filter);
-      } else {
-        centreQuery.match({});
+      if (name !== undefined) {
+        const [centres, total] = await Promise.all([
+          centreQuery.skip(skip).limit(limit).match({ name: name }),
+          centreModel.count(),
+        ]);
+        return { centres, total };
       }
+
       const [centres, total] = await Promise.all([
         centreQuery.skip(skip).limit(limit),
         centreModel.count(),
       ]);
       return { centres, total };
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+  getDetail: async (data) => {
+    try {
+      const centre = await centreModel
+        .aggregate()
+        .lookup({
+            from: 'images',
+            localField: '_id',
+            foreignField: 'centreId',
+            as: 'images'
+        })
+        .match({_id: ObjectId(data)});
+      return centre;
     } catch (error) {
       throw new Error(error);
     }

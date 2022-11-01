@@ -25,10 +25,10 @@ const centreController = {
   getMany: async (req, res) => {
     try {
       const data = req.query;
-      const { limit, page, filter } = data;
+      const { limit, page, name } = data;
       const skip = (page - 1) * limit;
       const { centres, total } = await centreService.getMany({
-        filter,
+        name,
         skip,
         limit,
       });
@@ -42,6 +42,15 @@ const centreController = {
       return res.status(500).json({ message: error.message, result: error });
     }
   },
+  getDetail: async (req, res) => {
+    try {
+        const id = req.params.id;
+        const centre = await centreService.getDetail(id);
+        return res.status(200).json({message: 'Successfully', result: centre[0]});
+    } catch (error) {
+        return res.status(500).json({ message: error.message, result: error });
+    }
+  }
 };
 
 module.exports = centreController;
