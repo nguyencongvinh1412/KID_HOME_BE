@@ -7,21 +7,21 @@ const addressService = {
         try {
             return cityModel.find({});
         } catch (error) {
-            return error;
+            throw new Error(error.message);
         }
     },
     getDistrictByCity: async (parentCode) => {
         try {
-            return districtModel.find({parent_code: parentCode});
+            return districtModel.find({city_code: parentCode});
         } catch (error) {
-            return error;
+            throw new Error(error.message);
         }
     },
     getWardByDistrict: async (parentCode) => {
         try {
-            return wardModel.find({parent_code: parentCode});
+            return wardModel.find({district_code: parentCode});
         } catch (error) {
-            return error;
+            throw new Error(error.message);
         }
     },
 
@@ -29,14 +29,14 @@ const addressService = {
         try {
             return districtModel.find({});
         } catch (error) {
-            return error;
+            throw new Error(error.message);
         }
     },
     getAllWards: async () => {
         try {
             return wardModel.find({});
         } catch (error) {
-            return error;
+            throw new Error(error.message);
         }
     }
 }
