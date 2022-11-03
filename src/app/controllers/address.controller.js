@@ -34,6 +34,30 @@ const addressController = {
         } catch (error) {
             return res.status(500).json({message: error.message, result: error});
         }
+    },
+    getCityByCode: async (req, res) => {
+        try {
+            const city = await addressService.getCityByCode(req.query.code);
+            return res.json({message: "Successfully", result: city});
+        } catch (error) {
+            return res.json({message: error.message, result: error});
+        }
+    },
+    getDistrictByCode: async (req, res) => {
+        try {
+            const district = await addressService.getDistrictByCode(req.query.code);
+            return res.json({message: "Successfully", result: district});
+        } catch (error) {
+            return res.json({message: error.message, result: error});
+        }
+    },
+    getWardByCode: async (req, res) => {
+        try {
+            const ward = await addressService.getWardByCode(req.query.code);
+            return res.json({message: "Successfully", result: ward});
+        } catch (error) {
+            return res.json({message: error.message, result: error});
+        }
     }
 }
 

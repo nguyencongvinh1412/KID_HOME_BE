@@ -6,7 +6,7 @@ const RoleService = {
             const role = new roleModel(data);
             return role.save();
         } catch (error) {
-            return error;
+            throw new Error(error.message);
         }
     },
 
@@ -14,7 +14,14 @@ const RoleService = {
         try {
             return roleModel.findOne(options);
         } catch (error) {
-            return error;
+            throw new Error(error.message);
+        }
+    },
+    getAll: async () => {
+        try {
+            return roleModel.find({name: {$ne: 'superadmin'}});
+        } catch (error) {
+            throw new Error(error.message);
         }
     }
 }

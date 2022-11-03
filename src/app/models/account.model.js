@@ -15,7 +15,7 @@ const Account = new Schema({
   fullname: {
     type: String,
     required: true,
-    unique: false
+    unique: true
   },
   password: {
     type: String,
@@ -24,22 +24,22 @@ const Account = new Schema({
   },
   dateOfBirth: {
     type: Date,
-    required: false,
+    required: true,
   },
   roleId: { type: ObjectId, ref: "role" , required: true},
   phoneNumber: {
     type: String,
     minLength: 10,
     maxLength: 20,
-    required: false,
+    required: true,
   },
   displayAddress: {
     type: String,
-    required: false,
+    required: true,
   },
   isActive: {
     type: Boolean,
-    required: false,
+    required: true,
     default: false
   },
   gender: {

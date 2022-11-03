@@ -8,32 +8,6 @@ const { ROLE } = require("../../constants/role.constant");
 const parentService = require("../services/parent.service");
 
 const AuthController = {
-  registerCentreUser: async (req, res) => {
-    try {
-      const { accountInfo, centreInfo } = req.body;
-      console.log(req.body);
-      if (!accountInfo || !centreInfo) {
-        throw new Error("Invalid Input value");
-      }
-
-      const role = await roleService.findOne({ name: ROLE.CENTRE_ADMIN });
-      accountInfo.roleId = role._id;
-      accountInfo.password = authHelper.hashedPassword(accountInfo.password);
-      const account = await accountService.createOne(accountInfo);
-      const centre = await centreService.createOne(centreInfo);
-
-      const centreUser = await centreUserService.createOne({
-        centreId: centre._id,
-        accountId: account._id,
-      });
-      
-      const {password, ...result} = account._doc;
-      return res.json({message: "Successfully", result});
-    } catch (error) {
-      return res.status(400).json({message: error.message, result: error});
-    }
-  },
-
   login: async (req, res) => {
     try {
         const loginResult = await authHelper.login(req, res);
@@ -44,22 +18,6 @@ const AuthController = {
         return res.json({message: "Successfully", result: loginResult});
     } catch (error) {
         return res.status(401).json({message: error.message, result: error});
-    }
-  },
-
-  registerCentreStaff: async (req, res) => {
-    try {
-        if (!req.body) {
-            throw new Error("Invalid Input value");
-        }
-
-        const role = await roleService.findOne({name: ROLE.CENTRE_STAFF });
-        req.body.password = authHelper.hashedPassword(req.body.password);
-        const account = await accountService.createOne({...req.body, roleId: role._id});
-        const centreStaff = await centreStaffService.createOne({...req.body, accountId: account._id});
-        return res.json({message: "Successfully", result: centreStaff});
-    } catch (error) {
-        return res.status(400).json({message: error.message, result: error});
     }
   },
 

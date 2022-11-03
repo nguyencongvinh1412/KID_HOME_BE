@@ -103,7 +103,7 @@ const mockData = {
         short_codename: item.short_codename,
         city_code: city_code
       }));
-      const wds = mockData.getWardDBfromFile(item.wards, item.code)
+      const wds = mockData.getWardDBfromFile(item.wards, item.code);
       wards.push(...wds);
     });
     return [districts, wards];

@@ -14,6 +14,8 @@ const addressRoute = require("./resources/routers/address.route");
 const cloudinaryRoute = require('./resources/routers/cloudinary.route');
 const centreRoute = require('./resources/routers/centre.route');
 const mockDataRoute = require('./resources/routers/mock_data.route');
+const userRoute = require("./resources/routers/user.route");
+const roleRoute = require("./resources/routers/role.route");
 
 dotenv.config();
 
@@ -33,6 +35,8 @@ app.use('/address', addressRoute);
 app.use('/cloudinary', cloudinaryRoute);
 app.use('/centres', centreRoute);
 app.use('/mock-data', mockDataRoute);
+app.use('/users', userRoute);
+app.use('/roles', roleRoute);
 
 server.listen(PORT, (req, res) => {
     console.log(`listening ${originDomain}${PORT}`);

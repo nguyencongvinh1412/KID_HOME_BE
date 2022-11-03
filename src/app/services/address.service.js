@@ -38,6 +38,27 @@ const addressService = {
         } catch (error) {
             throw new Error(error.message);
         }
+    },
+    getCityByCode: async (code) => {
+        try {
+            return cityModel.findOne({code: code});
+        } catch (error) {
+            throw new Error(error.message);
+        }
+    },
+    getDistrictByCode: async (code) => {
+        try {
+            return districtModel.findOne({code: code});
+        } catch (error) {
+            throw new Error(error.message);
+        }
+    },
+    getWardByCode: async (code) => {
+        try {
+            return wardModel.findOne({code: code});
+        } catch (error) {
+            throw new Error(error.message);
+        }
     }
 }
 
