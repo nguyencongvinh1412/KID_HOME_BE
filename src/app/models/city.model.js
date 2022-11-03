@@ -4,10 +4,10 @@ const ObjectId = Schema.ObjectId;
 
 const City = new Schema({
   name: {type: String, required: true},
-  slug: {type: String, required: true },
-  type: {type: String, required: true},
-  name_with_type: {type: String, required: true},
-  code: {type: String, required: true},
+  code: {type: Number, required: true },
+  codename: {type: String, required: true},
+  division_type: {type: String, required: true},
+  phone_code: {type: String, required: true},
 });
 
 module.exports = mongoose.model("city", City);
