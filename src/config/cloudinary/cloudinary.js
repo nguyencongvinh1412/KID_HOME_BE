@@ -7,4 +7,6 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_SECRECT_KEY 
   });
 
-module.export = cloudinary;
+const uploader = async (path) => await cloudinary.uploader.upload(path).then((res) => res);
+
+module.export = uploader;

@@ -10,7 +10,7 @@ const centreService = {
       const centre = new centreModel(data);
       return centre.save();
     } catch (error) {
-      return error;
+      throw new Error(error.message);
     }
   },
   deleteMany: async (data) => {

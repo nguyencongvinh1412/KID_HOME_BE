@@ -8,9 +8,24 @@ const Centre = new Schema({
     required: true,
     unique: true,
   },
-  address: {
+  cityCode: {
+    type: ObjectId,
+    ref: 'city',
+    requried: true
+  },
+  districtCode: {
+    type: ObjectId,
+    ref: "district",
+    required: true
+  },
+  wardCode: {
+    type: ObjectId,
+    ref: "ward",
+    required: true
+  },
+  displayAddress: {
     type: String,
-    required: true,
+    required: true
   },
   contactPhone: {
     type: String,
@@ -55,6 +70,19 @@ const Centre = new Schema({
     type: Number,
     required: false,
     default: 0,
+  },
+  fee: {
+    type: String,
+    requried: true
+  },
+  yearsOld: {
+    type: String,
+    required: true
+  },
+  author: {
+    type: ObjectId,
+    ref: "account",
+    required: true
   }
 }, {
     timestamps: true

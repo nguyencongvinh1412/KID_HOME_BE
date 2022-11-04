@@ -50,6 +50,14 @@ const centreController = {
     } catch (error) {
         return res.status(500).json({ message: error.message, result: error });
     }
+  },
+  createNewCentre: async (req, res) => {
+    try {
+      const body = req.body;
+      return res.status(201).json({message: 'Successfully', result: body});
+    } catch (error) {
+      return res.status(400).json({message: error.message, data: error});
+    }
   }
 };
 

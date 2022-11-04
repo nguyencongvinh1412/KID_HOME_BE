@@ -8,9 +8,8 @@ const Image = new Schema({
         required: true,
         trim: true
     },
-    centreId: {
-        type: ObjectId,
-        ref: "centre",
+    targetId: {
+        type: String,
         required: true
     }
 }, {
