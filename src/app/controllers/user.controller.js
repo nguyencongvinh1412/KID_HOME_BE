@@ -52,6 +52,29 @@ const UserController = {
     } catch (error) {
         return res.status(400).json({message: error.message, result: error});
     }
+  },
+  detailUser: async (req, res) => {
+    try {
+      const account = await accountService.detailUser(req.params.userId);
+      return res.status(200).json({message: "Successfully", result: account});
+    } catch (error) {
+      return res.status(400).json({message: error.message, result: error});
+    }
+  },
+  updateUser: async (req, res) => {
+    try {
+      const userId = req.params.userId;
+      const data = req.body;
+      const role = await roleService.findOne({name: data.role});
+      if (!role) {
+        throw new Error("Can not find role");
+      }
+      data.roleId = role._id;
+      const accountUpdate = await accountService.updateUser(userId, data);
+      return res.status(200).json({message: "Successfully", result: accountUpdate});
+    } catch (error) {
+      return res.status(400).json({message: error.message, data: error});
+    }
   }
 };
 

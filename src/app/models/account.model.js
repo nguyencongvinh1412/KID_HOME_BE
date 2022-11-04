@@ -45,6 +45,21 @@ const Account = new Schema({
   gender: {
     type: String,
     required: true,
+  },
+  cityCode: {
+    type: ObjectId,
+    ref: "city",
+    required: true
+  },
+  districtCode: {
+    type: ObjectId,
+    ref: "district",
+    required: true
+  },
+  wardCode: {
+    type: ObjectId,
+    ref: "ward",
+    required: true
   }
 }, {
   timestamps: true
