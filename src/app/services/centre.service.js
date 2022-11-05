@@ -1,8 +1,8 @@
 const centreModel = require("../models/centre.model");
+const imageModel = require("../models/image.model");
 const fs = require("fs");
 const path = require("path");
-const imageModel = require("../models/image.model");
-const ObjectId = require('mongoose').Types.ObjectId;
+const ObjectId = require("mongoose").Types.ObjectId;
 
 const centreService = {
   createOne: async (data) => {
@@ -13,6 +13,7 @@ const centreService = {
       throw new Error(error.message);
     }
   },
+
   deleteMany: async (data) => {
     try {
       const centresDeleted = await centreModel.deleteMany(data);
@@ -21,6 +22,7 @@ const centreService = {
       return error;
     }
   },
+
   createManyFromFile: async () => {
     fs.readFile(
       path.join(__dirname, "../../../db_mock/centres.json"),
@@ -33,46 +35,172 @@ const centreService = {
       }
     );
   },
-  getMany: async (data) => {
+
+  getManyByCentreAdmin: async (data) => {
     try {
-      let { name, limit, skip } = data;
+      let { name, limit, skip, authorId } = data;
       limit = Number.parseInt(limit);
       skip = Number.parseInt(skip);
-      let centreQuery = centreModel.aggregate().lookup({
-        from: "images",
-        localField: "_id",
-        foreignField: "centreId",
-        as: "images",
-      });
-      if (name !== undefined) {
-        const [centres, total] = await Promise.all([
-          centreQuery.skip(skip).limit(limit).match({ name: name }),
-          centreModel.count(),
-        ]);
-        return { centres, total };
+      let centres = [];
+      let centreShow = [];
+      let total = 0;
+      if (name) {
+        centres = await centreModel
+          .find({ name: name, author: ObjectId(authorId) })
+          .skip(skip)
+          .limit(limit)
+          .populate("cityCode")
+          .populate("districtCode")
+          .populate("wardCode");
+      } else {
+        centres = await centreModel
+          .find({ author: ObjectId(authorId) })
+          .skip(skip)
+          .limit(limit)
+          .populate("cityCode")
+          .populate("districtCode")
+          .populate("wardCode")
+          .populate("author");
       }
 
-      const [centres, total] = await Promise.all([
-        centreQuery.skip(skip).limit(limit),
-        centreModel.count(),
-      ]);
-      return { centres, total };
+      for (let centre of centres) {
+        const images = await imageModel.find({ targetId: centre._id });
+        const openHours = centre._doc.openHours;
+        centreShow.push({
+          ...centre._doc,
+          images,
+          openTime: `${openHours.startTime} - ${openHours.endTime}`,
+        });
+      }
+
+      total = centreShow.length;
+      return [centreShow, total];
     } catch (error) {
       throw new Error(error);
     }
   },
-  getDetail: async (data) => {
+
+  getAllByCentreAdmin: async (data) => {
     try {
-      const centre = await centreModel
-        .aggregate()
-        .lookup({
-            from: 'images',
-            localField: '_id',
-            foreignField: 'centreId',
-            as: 'images'
-        })
-        .match({_id: ObjectId(data)});
-      return centre;
+      let { authorId } = data;
+      let centres = [];
+      let centreShow = [];
+      centres = await centreModel
+        .find({ author: ObjectId(authorId) })
+        .populate("cityCode")
+        .populate("districtCode")
+        .populate("wardCode")
+        .populate("author");
+
+      for (let centre of centres) {
+        const images = await imageModel.find({ targetId: centre._id });
+        const openHours = centre._doc.openHours;
+        centreShow.push({
+          ...centre._doc,
+          images,
+          openTime: `${openHours.startTime} - ${openHours.endTime}`,
+        });
+      }
+      return centreShow;
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+
+  getDetailByCentreAdmin: async (data) => {
+    try {
+      let centre = await centreModel
+        .findOne({ _id: data })
+        .populate("author")
+        .populate("cityCode")
+        .populate("districtCode")
+        .populate("wardCode");
+      const images = await imageModel.find({ targetId: centre._id });
+      openTime = centre._doc.openHours;
+      return {
+        ...centre._doc,
+        images,
+        openTime: `${openTime.startTime} - ${openTime.endTime}`,
+      };
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+
+  activeCentre: async (centreId) => {
+    try {
+      return centreModel.updateOne({ _id: centreId }, { isActive: true });
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+
+  deActiveCentre: async (centreId) => {
+    try {
+      return centreModel.updateOne({ _id: centreId }, { isActive: false });
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+
+  deleteCentre: async (centreId) => {
+    try {
+      await imageModel.deleteMany({ targetId: centreId });
+      return centreModel.deleteOne({ _id: centreId });
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+
+  getManyCentreBySuperAdmin: async (data) => {
+    try {
+      let { limit, skip } = data;
+      limit = Number.parseInt(limit);
+      skip = Number.parseInt(skip);
+      let centres = [];
+      let centreShow = [];
+      let total = 0;
+      centres = await centreModel
+          .find({})
+          .skip(skip)
+          .limit(limit)
+          .populate("cityCode")
+          .populate("districtCode")
+          .populate("wardCode")
+          .populate("author");
+
+      for (let centre of centres) {
+        const images = await imageModel.find({ targetId: centre._id });
+        const openHours = centre._doc.openHours;
+        centreShow.push({
+          ...centre._doc,
+          images,
+          openTime: `${openHours.startTime} - ${openHours.endTime}`,
+        });
+      }
+
+      total = centreShow.length;
+      return [centreShow, total];
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+
+  getDetailBySuperAdmin: async (data) => {
+    try {
+      let centre = await centreModel
+        .findOne({ _id: data })
+        .populate("author")
+        .populate("cityCode")
+        .populate("districtCode")
+        .populate("wardCode");
+      const images = await imageModel.find({ targetId: centre._id });
+      openTime = centre._doc.openHours;
+      return {
+        ...centre._doc,
+        images,
+        openTime: `${openTime.startTime} - ${openTime.endTime}`,
+      };
     } catch (error) {
       throw new Error(error);
     }

@@ -16,6 +16,8 @@ const centreRoute = require('./resources/routers/centre.route');
 const mockDataRoute = require('./resources/routers/mock_data.route');
 const userRoute = require("./resources/routers/user.route");
 const roleRoute = require("./resources/routers/role.route");
+const blogRoute = require("./resources/routers/blog.route");
+const commentRoute = require("./resources/routers/comment.route");
 
 dotenv.config();
 
@@ -37,6 +39,8 @@ app.use('/centres', centreRoute);
 app.use('/mock-data', mockDataRoute);
 app.use('/users', userRoute);
 app.use('/roles', roleRoute);
+app.use('/blogs', blogRoute);
+app.use('/comments', commentRoute);
 
 server.listen(PORT, (req, res) => {
     console.log(`listening ${originDomain}${PORT}`);

@@ -2,6 +2,7 @@ const accountModel = require("../models/account.model");
 const cityMode = require("../models/city.model");
 const districtModel = require("../models/district.model");
 const wardMoel = require("../models/ward.model");
+const ObjectId = require("mongoose").Types.ObjectId;
 
 const accountService = {
   createOne: async (data) => {
@@ -12,13 +13,20 @@ const accountService = {
       throw new Error(error.message);
     }
   },
-  findAll: async (skip, limit) => {
+  findAll: async (skip, limit, authorId) => {
     try {
       skip = Number.parseInt(skip);
       limit = Number.parseInt(limit);
       return Promise.all([
-        accountModel.find({}).skip(skip).limit(limit).populate("roleId"),
-        accountModel.find({}).populate().count(),
+        accountModel
+          .find({ _id: { $ne: ObjectId(authorId) } })
+          .skip(skip)
+          .limit(limit)
+          .populate("roleId"),
+        accountModel
+          .find({ _id: { $ne: ObjectId(authorId) } })
+          .populate()
+          .count(),
       ]);
     } catch (error) {
       throw new Error(error.message);
@@ -60,11 +68,11 @@ const accountService = {
   },
   updateUser: async (userId, data) => {
     try {
-        return accountModel.updateOne({_id: userId}, data, {new: true});
+      return accountModel.updateOne({ _id: userId }, data, { new: true });
     } catch (error) {
-        throw new Error(error.message);
+      throw new Error(error.message);
     }
-  }
+  },
 };
 
 module.exports = accountService;

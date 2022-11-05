@@ -30,8 +30,9 @@ const UserController = {
     try {
         const page = Number.parseInt(req.query.page);
         const limit = Number.parseInt(req.query.limit);
+        const authorId = req.user._id;
         const skip = (page - 1) * limit;
-        const [accounts, total] = await accountService.findAll(skip, limit);
+        const [accounts, total] = await accountService.findAll(skip, limit, authorId);
         return res.status(200).json({message: "Successfully", result: {users: accounts, paging: {page, total, limit }}});
     } catch (error) {
         return res.status(400).json({message: error.message, result: error});
