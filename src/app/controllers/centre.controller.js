@@ -33,11 +33,11 @@ const centreController = {
       const data = req.query;
       const { limit, page, name } = data;
       const skip = (page - 1) * limit;
-      const [ centres, total ] = await centreService.getManyByCentreAdmin({
+      const [centres, total] = await centreService.getManyByCentreAdmin({
         name,
         skip,
         limit,
-        authorId: req.user._id
+        authorId: req.user._id,
       });
       return res.status(200).json({
         message: "Successfully",
@@ -51,7 +51,7 @@ const centreController = {
   getAllByCentreAdmin: async (req, res) => {
     try {
       const centres = await centreService.getAllByCentreAdmin({
-        authorId: req.user._id
+        authorId: req.user._id,
       });
       return res.status(200).json({
         message: "Successfully",
@@ -66,9 +66,7 @@ const centreController = {
     try {
       const id = req.params.id;
       const centre = await centreService.getDetailByCentreAdmin(id);
-      return res
-        .status(200)
-        .json({ message: "Successfully", result: centre });
+      return res.status(200).json({ message: "Successfully", result: centre });
     } catch (error) {
       return res.status(500).json({ message: error.message, result: error });
     }
@@ -92,22 +90,29 @@ const centreController = {
           },
           geolocation: {
             type: "Point",
-            coordinates: [Number(fields.geolocation[0]), Number(fields.geolocation[1])]
+            coordinates: [
+              Number(fields.geolocation[0]),
+              Number(fields.geolocation[1]),
+            ],
           },
-          author: req.user._id
+          author: req.user._id,
         };
 
         const centre = await centreService.createOne(centreObject);
         if (typeof fields.images === "string") {
-          const image = await imageService.addOneImageToCentre({url: fields.images, targetId: centre._id});
+          const image = await imageService.addOneImageToCentre({
+            url: fields.images,
+            targetId: centre._id,
+          });
         } else {
           fields.images.forEach(async (item) => {
-            await imageService.addOneImageToCentre({url: item, targetId: centre._id});
-          })
+            await imageService.addOneImageToCentre({
+              url: item,
+              targetId: centre._id,
+            });
+          });
         }
-        return res
-          .status(201)
-          .json({ message: "Successfully", result: {} });
+        return res.status(201).json({ message: "Successfully", result: {} });
       } catch (error) {
         return res.status(400).json({ message: error.message, data: error });
       }
@@ -117,27 +122,33 @@ const centreController = {
   activeCentre: async (req, res) => {
     try {
       const response = await centreService.activeCentre(req.params.centreId);
-      return res.status(200).json({message: "Successfully", result: response});
+      return res
+        .status(200)
+        .json({ message: "Successfully", result: response });
     } catch (error) {
-      return res.status(400).json({message: error.message, data: error});
+      return res.status(400).json({ message: error.message, data: error });
     }
   },
 
   deActiveCentre: async (req, res) => {
     try {
       const response = await centreService.deActiveCentre(req.params.centreId);
-      return res.status(200).json({message: "Successfully", result: response});
+      return res
+        .status(200)
+        .json({ message: "Successfully", result: response });
     } catch (error) {
-      return res.status(400).json({message: error.message, data: error}); 
+      return res.status(400).json({ message: error.message, data: error });
     }
   },
 
   deleteCentre: async (req, res) => {
     try {
       const response = await centreService.deleteCentre(req.params.centreId);
-      return res.status(200).json({message: "Successfully", result: response});
+      return res
+        .status(200)
+        .json({ message: "Successfully", result: response });
     } catch (error) {
-      return res.status(400).json({message: error.message, data: error});  
+      return res.status(400).json({ message: error.message, data: error });
     }
   },
 
@@ -146,7 +157,7 @@ const centreController = {
       const data = req.query;
       const { limit, page } = data;
       const skip = (page - 1) * limit;
-      const [ centres, total ] = await centreService.getManyCentreBySuperAdmin({
+      const [centres, total] = await centreService.getManyCentreBySuperAdmin({
         skip,
         limit,
       });
@@ -163,9 +174,35 @@ const centreController = {
     try {
       const id = req.params.id;
       const centre = await centreService.getDetailBySuperAdmin(id);
+      return res.status(200).json({ message: "Successfully", result: centre });
+    } catch (error) {
+      return res.status(500).json({ message: error.message, result: error });
+    }
+  },
+
+  getManyCentreByParent: async (req, res) => {
+    try {
+      const { page = 1, limit = 9 } = req.query;
+      const [centres, total] = await centreService.getManyCentreByParent({
+        page,
+        limit,
+      });
       return res
         .status(200)
-        .json({ message: "Successfully", result: centre });
+        .json({
+          message: "Successfully",
+          result: { centres, paging: { total, page, limit } },
+        });
+    } catch (error) {
+      return res.status(400).json({ message: error.message, data: error });
+    }
+  },
+
+  getDetailByParent: async (req, res) => {
+    try {
+      const id = req.params.id;
+      const centre = await centreService.getDetailByParent(id);
+      return res.status(200).json({ message: "Successfully", result: centre });
     } catch (error) {
       return res.status(500).json({ message: error.message, result: error });
     }

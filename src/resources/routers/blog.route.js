@@ -9,4 +9,11 @@ route.get('/centre-admin', authMiddleware.isCentreAdmin, controller.getManyBlogB
 
 route.get('/centre-admin/detail/:blogId', authMiddleware.isCentreAdmin, controller.getDetailByCentreAdmin);
 
+route.get('/parent/belong-centre', controller.getManyBlogBelongCentre);
+
+route.get('/parent/detail/:blogId', controller.getDetailByParent);
+
+route.get('/parent/belong-blog/:blogId', controller.getManyBlogBelongBlog);
+
+route.get('/parent', controller.getManyBlogByParent);
 module.exports = route;

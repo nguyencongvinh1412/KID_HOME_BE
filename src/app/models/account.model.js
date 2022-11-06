@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
 const Account = new Schema({
-  avater: {
+  avatar: {
     type: String,
     required: false,
   },

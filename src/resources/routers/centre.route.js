@@ -69,4 +69,8 @@ route.get(
   controller.getDetailBySuperAdmin
 );
 
+route.get("/parent", controller.getManyCentreByParent);
+
+route.get("/parent/:id", controller.getDetailBySuperAdmin);
+
 module.exports = route;

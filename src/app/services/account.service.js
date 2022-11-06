@@ -1,3 +1,4 @@
+const authHelper = require("../../helpers/auth.helper");
 const accountModel = require("../models/account.model");
 const cityMode = require("../models/city.model");
 const districtModel = require("../models/district.model");
@@ -73,6 +74,23 @@ const accountService = {
       throw new Error(error.message);
     }
   },
+
+  updateProfile: async (userId, data) => {
+    try {
+      return accountModel.findOneAndUpdate({_id: userId}, data, {new: true}).populate("roleId");
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+
+  changePassword: async (userId, data) => {
+    try {
+      const user = authHelper.changePassword(userId, data);
+      return user;
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
 };
 
 module.exports = accountService;

@@ -110,6 +110,27 @@ const authHelper = {
     });
     return res;
   },
+
+  changePassword: async (userId, data) => {
+    try {
+      const {current_password, new_password} = data;
+      let user = await AccountModel.findOne({_id: userId});
+      if (!user) {
+        throw new Error("User is not found");
+      }
+
+      const inValidPassword = authHelper.checkPassword(current_password, user.password);
+      if (!inValidPassword) {
+        throw new Error("Invalid old password");
+      }
+      const hashPassword = authHelper.hashedPassword(new_password);
+
+      user = await AccountModel.findOneAndUpdate({_id: userId}, {password: hashPassword}, {new: true});
+      return user;
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
 }
 
 module.exports = authHelper;

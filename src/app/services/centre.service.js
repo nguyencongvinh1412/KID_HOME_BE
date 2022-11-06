@@ -86,7 +86,7 @@ const centreService = {
       let centres = [];
       let centreShow = [];
       centres = await centreModel
-        .find({ author: ObjectId(authorId) })
+        .find({ author: ObjectId(authorId), isActive: true })
         .populate("cityCode")
         .populate("districtCode")
         .populate("wardCode")
@@ -190,6 +190,57 @@ const centreService = {
     try {
       let centre = await centreModel
         .findOne({ _id: data })
+        .populate("author")
+        .populate("cityCode")
+        .populate("districtCode")
+        .populate("wardCode");
+      const images = await imageModel.find({ targetId: centre._id });
+      openTime = centre._doc.openHours;
+      return {
+        ...centre._doc,
+        images,
+        openTime: `${openTime.startTime} - ${openTime.endTime}`,
+      };
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+
+  getManyCentreByParent: async (data) => {
+    try {
+      let {page = 1, limit = 9} = data;
+      page = Number.parseInt(page);
+      limit = Number.parseInt(limit);
+      const skip = (page - 1) * limit;
+      const centres = await centreModel.find({isActive: true})
+        .skip(skip)
+        .limit(limit)
+        .populate("author")
+        .populate("cityCode")
+        .populate("districtCode")
+        .populate("wardCode");
+      
+      let centresShow = [];
+      for(const centre of centres) {
+        const images = await imageModel.find({targetId: centre._id});
+        const openHours = centre._doc.openHours;
+        centresShow.push({
+          ...centre._doc,
+          images,
+          openTime: `${openHours.startTime} - ${openHours.endTime}`,
+        })
+      }
+      const total = centresShow.length;
+      return [centresShow, total];
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+
+  getDetailByParent: async (centreId) => {
+    try {
+      let centre = await centreModel
+        .findOne({ _id: centreId, isActive: true })
         .populate("author")
         .populate("cityCode")
         .populate("districtCode")
