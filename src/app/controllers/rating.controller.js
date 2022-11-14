@@ -8,8 +8,8 @@ const ratingController = {
                 ...req.body,
                 author: userId
             }
-            const rating = await ratingService.addRating(ratingObject);
-            return res.status(201).json({message: "Successfully", result: rating});
+            const [ratingDoc, rating] = await ratingService.addRating(ratingObject);
+            return res.status(201).json({message: "Successfully", result: {rating}});
         } catch (error) {
             return res.status(400).json({message: error.message, data: error});
         }
