@@ -3,6 +3,7 @@ const formidable = require("formidable");
 const dateFns = require("date-fns");
 const imageService = require("../services/image.service");
 const centerStaffModel = require("../models/centerStaff.model");
+const ratingService = require("../services/rating.service");
 
 const centreController = {
   deleteMany: async (req, res) => {
@@ -207,6 +208,21 @@ const centreController = {
       return res.status(500).json({ message: error.message, result: error });
     }
   },
+
+  getCentresRecommend: async (req, res) => {
+    try {
+      const userId = req.params.userId;
+      const isUserRated = await ratingService.isUserRated(userId);
+      if (isUserRated) {
+        await centreService.getCentresRecommend(res, userId);
+      } else {
+        const centres = await centreService.getManyCentreByParent();
+        return res.status(200).json({message: "Successfully", result: centres});
+      }
+    } catch (error) {
+      return res.status(500).json({ message: error.message, result: error }); 
+    }
+  }
 };
 
 module.exports = centreController;

@@ -73,4 +73,6 @@ route.get("/parent", controller.getManyCentreByParent);
 
 route.get("/parent/:id", controller.getDetailBySuperAdmin);
 
+route.get("/parent/recommend/:userId", controller.getCentresRecommend);
+
 module.exports = route;

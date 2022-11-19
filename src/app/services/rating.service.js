@@ -1,6 +1,7 @@
 const ratingModel = require("../models/rating.model");
 const ObjectId = require("mongoose").Types.ObjectId;
 const centreModel = require("../models/centre.model");
+const lodash = require('lodash');
 
 const ratingService = {
   addRating: async (data) => {
@@ -28,6 +29,16 @@ const ratingService = {
       throw new Error(error);
     }
   },
+
+  isUserRated: async (userId) => {
+    try {
+      const rating = await ratingModel.findOne({author: ObjectId(userId)});
+      return !lodash.isNil(rating);
+
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
 };
 
 module.exports = ratingService;
