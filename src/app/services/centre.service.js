@@ -81,7 +81,7 @@ const centreService = {
         });
       }
 
-      total = centreShow.length;
+      total = await centreModel.find({ author: ObjectId(authorId) }).count();
       return [centreShow, total];
     } catch (error) {
       throw new Error(error);
@@ -165,17 +165,18 @@ const centreService = {
       let { limit, skip } = data;
       limit = Number.parseInt(limit);
       skip = Number.parseInt(skip);
-      let centres = [];
       let centreShow = [];
-      let total = 0;
-      centres = await centreModel
+      const [total, centres] = await Promise.all([
+        centreModel.find({}).count(),
+        centreModel
         .find({})
         .skip(skip)
         .limit(limit)
         .populate("cityCode")
         .populate("districtCode")
         .populate("wardCode")
-        .populate("author");
+        .populate("author")
+      ]);
 
       for (let centre of centres) {
         const images = await imageModel.find({ targetId: centre._id });
@@ -187,7 +188,6 @@ const centreService = {
         });
       }
 
-      total = centreShow.length;
       return [centreShow, total];
     } catch (error) {
       throw new Error(error);
@@ -220,7 +220,9 @@ const centreService = {
       page = Number.parseInt(page);
       limit = Number.parseInt(limit);
       const skip = (page - 1) * limit;
-      const centres = await centreModel
+      const [total, centres ] = await Promise.all([
+        centreModel.find({isActive: true}).count(),
+        centreModel
         .find({ isActive: true })
         .skip(skip)
         .limit(limit)
@@ -228,7 +230,8 @@ const centreService = {
         .populate("cityCode")
         .populate("districtCode")
         .populate("wardCode")
-        .sort({rating: -1});
+        .sort({rating: -1})
+      ]);
 
       let centresShow = [];
       for (const centre of centres) {
@@ -240,7 +243,7 @@ const centreService = {
           openTime: `${openHours.startTime} - ${openHours.endTime}`,
         });
       }
-      const total = centresShow.length;
+      // const total = centresShow.length;
       return [centresShow, total];
     } catch (error) {
       throw new Error(error);
