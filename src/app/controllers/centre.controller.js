@@ -216,7 +216,7 @@ const centreController = {
       if (isUserRated) {
         await centreService.getCentresRecommend(res, userId);
       } else {
-        const centres = await centreService.getManyCentreByParent();
+        const centres = await centreService.getManyCentreByParent({page: 1, limit: 9});
         return res.status(200).json({message: "Successfully", result: centres});
       }
     } catch (error) {

@@ -217,6 +217,7 @@ const centreService = {
   getManyCentreByParent: async (data) => {
     try {
       let { page = 1, limit = 9 } = data;
+      console.log(page, limit);
       page = Number.parseInt(page);
       limit = Number.parseInt(limit);
       const skip = (page - 1) * limit;
