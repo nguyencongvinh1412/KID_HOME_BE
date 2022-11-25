@@ -19,6 +19,7 @@ const roleRoute = require("./resources/routers/role.route");
 const blogRoute = require("./resources/routers/blog.route");
 const commentRoute = require("./resources/routers/comment.route");
 const ratingRoute = require("./resources/routers/rating.route");
+const serviceTypeRoute = require("./resources/routers/serviceType.route");
 
 dotenv.config();
 
@@ -43,6 +44,7 @@ app.use('/roles', roleRoute);
 app.use('/blogs', blogRoute);
 app.use('/comments', commentRoute);
 app.use('/ratings', ratingRoute);
+app.use('/service-type', serviceTypeRoute);
 
 server.listen(PORT, (req, res) => {
     console.log(`listening ${originDomain}${PORT}`);

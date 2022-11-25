@@ -4,6 +4,7 @@ const dateFns = require("date-fns");
 const imageService = require("../services/image.service");
 const centerStaffModel = require("../models/centerStaff.model");
 const ratingService = require("../services/rating.service");
+const { result } = require("lodash");
 
 const centreController = {
   deleteMany: async (req, res) => {
@@ -221,6 +222,37 @@ const centreController = {
       }
     } catch (error) {
       return res.status(500).json({ message: error.message, result: error }); 
+    }
+  },
+
+  getCentresNearbyCentre: async (req, res) => {
+    try {
+      const {centreId, lng, lat} = req.query;
+      const centres = await centreService.getCentresNearbyCentre(centreId, lat, lng);
+      return res.status(200).json({message: "Successfully", result: centres}); 
+    } catch (error) {
+      return res.status(500).json({ message: error.message, data: error });  
+    }
+  },
+
+  getManyCentresByFilter: async (req, res) => {
+    try {
+      const {limit = 9, page = 1,name, ...otherFilter } = req.query;
+      const location = {
+        lng: otherFilter.lng,
+        lat: otherFilter.lat,
+        radius: otherFilter.distance
+      }
+      delete otherFilter.lng;
+      delete otherFilter.lat;
+      delete otherFilter.distance;
+      delete otherFilter.serviceType;
+      otherFilter.centreName = req.query?.name;
+
+      const [centres, total] = await centreService.getManyCentresbyFilter({filter: otherFilter, limit, page, location, name});
+      return res.status(200).json({message: "Successfully", result: {centres: centres, paging: {page, limit, total}}});
+    } catch (error) {
+      return res.status(500).json({ message: error.message, data: error }); 
     }
   }
 };

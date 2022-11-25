@@ -3,6 +3,7 @@ const imageModel = require("../models/image.model");
 const userModel = require("../models/account.model");
 const roleModel = require("../models/role.model");
 const ratingModel = require("../models/rating.model");
+const serviceTypeModel = require("../models/serviceType.model");
 const fs = require("fs");
 const path = require("path");
 const { ROLE } = require("../../constants/role.constant");
@@ -123,12 +124,15 @@ const centreService = {
         .populate("cityCode")
         .populate("districtCode")
         .populate("wardCode");
+      
+      const services = await serviceTypeModel.find({_id: { $in: centre.serviceType }});
       const images = await imageModel.find({ targetId: centre._id });
       openTime = centre._doc.openHours;
       return {
         ...centre._doc,
         images,
         openTime: `${openTime.startTime} - ${openTime.endTime}`,
+        serviceType: services,
       };
     } catch (error) {
       throw new Error(error);
@@ -169,13 +173,13 @@ const centreService = {
       const [total, centres] = await Promise.all([
         centreModel.find({}).count(),
         centreModel
-        .find({})
-        .skip(skip)
-        .limit(limit)
-        .populate("cityCode")
-        .populate("districtCode")
-        .populate("wardCode")
-        .populate("author")
+          .find({})
+          .skip(skip)
+          .limit(limit)
+          .populate("cityCode")
+          .populate("districtCode")
+          .populate("wardCode")
+          .populate("author"),
       ]);
 
       for (let centre of centres) {
@@ -202,12 +206,15 @@ const centreService = {
         .populate("cityCode")
         .populate("districtCode")
         .populate("wardCode");
+      
+      const services = await serviceTypeModel.find({_id: { $in: centre.serviceType }});
       const images = await imageModel.find({ targetId: centre._id });
       openTime = centre._doc.openHours;
       return {
         ...centre._doc,
         images,
         openTime: `${openTime.startTime} - ${openTime.endTime}`,
+        serviceType: services,
       };
     } catch (error) {
       throw new Error(error);
@@ -217,21 +224,20 @@ const centreService = {
   getManyCentreByParent: async (data) => {
     try {
       let { page = 1, limit = 9 } = data;
-      console.log(page, limit);
       page = Number.parseInt(page);
       limit = Number.parseInt(limit);
       const skip = (page - 1) * limit;
-      const [total, centres ] = await Promise.all([
-        centreModel.find({isActive: true}).count(),
+      const [total, centres] = await Promise.all([
+        centreModel.find({ isActive: true }).count(),
         centreModel
-        .find({ isActive: true })
-        .skip(skip)
-        .limit(limit)
-        .populate("author")
-        .populate("cityCode")
-        .populate("districtCode")
-        .populate("wardCode")
-        .sort({rating: -1})
+          .find({ isActive: true })
+          .skip(skip)
+          .limit(limit)
+          .populate("author")
+          .populate("cityCode")
+          .populate("districtCode")
+          .populate("wardCode")
+          .sort({ rating: -1 }),
       ]);
 
       let centresShow = [];
@@ -259,12 +265,15 @@ const centreService = {
         .populate("cityCode")
         .populate("districtCode")
         .populate("wardCode");
+
+      const services = await serviceTypeModel.find({_id: { $in: centre.serviceType }});
       const images = await imageModel.find({ targetId: centre._id });
       openTime = centre._doc.openHours;
       return {
         ...centre._doc,
         images,
         openTime: `${openTime.startTime} - ${openTime.endTime}`,
+        serviceType: services,
       };
     } catch (error) {
       throw new Error(error);
@@ -277,25 +286,28 @@ const centreService = {
       // historyRating of this user
       // all centres
 
-      let [ratingHistory, centres] = await Promise.all([
+      let [ratingHistory, centres, serviceTypes] = await Promise.all([
         ratingModel
-          .find({ author: ObjectId(userId) })
-          .sort({ createdAt: -1 })
-          .populate("author")
-          .populate("centre"),
+        .find({ author: ObjectId(userId) })
+        .sort({ createdAt: -1 })
+        .populate("author")
+        .populate("centre"),
         centreModel
-          .find({})
-          .select("fee yearEstablished rating openHours rating"),
+        .find({})
+        .populate("wardCode")
+        .select("fee yearEstablished rating openHours rating serviceType wardCode"),
+        serviceTypeModel.find({}).select("_id"),
       ]);
-
+      
       ratingHistory = centreHelper.distinctRatingHistory(ratingHistory);
       ratingHistory = centreHelper.formatRatingHistory(ratingHistory);
       centres = centreHelper.formatCentres(centres);
+      serviceTypes = centreHelper.formatServiceType(serviceTypes);
 
       PythonShell.run(
         "src/helpers/Recommends/recommendSys.py",
         {
-          args: [JSON.stringify(ratingHistory), JSON.stringify(centres)],
+          args: [JSON.stringify(ratingHistory), JSON.stringify(centres), JSON.stringify(serviceTypes)],
           mode: "text",
         },
         async (err, results) => {
@@ -314,7 +326,6 @@ const centreService = {
             .populate("districtCode")
             .populate("wardCode");
 
-          
           let centresShow = [];
           for (const centre of centres) {
             const images = await imageModel.find({ targetId: centre._id });
@@ -326,9 +337,96 @@ const centreService = {
             });
           }
 
-          return res.status(200).json({message: "Successfully", result: centresShow});
+          return res
+            .status(200)
+            .json({ message: "Successfully", result: centresShow });
         }
       );
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+
+  getCentresNearbyCentre: async (centreId, lat, lng) => {
+    try {
+      lat = Number(lat);
+      lng = Number(lng);
+      const centres = await centreModel
+        .where("geolocation")
+        .within({
+          center: [lng, lat],
+          radius: 0.02,
+          unique: true,
+          spherical: true,
+        })
+        .populate("author")
+        .populate("cityCode")
+        .populate("districtCode")
+        .populate("wardCode")
+        .where({ _id: { $ne: ObjectId(centreId) } });
+
+      let centresShow = [];
+      for (const centre of centres) {
+        const images = await imageModel.find({ targetId: centre._id });
+        const openHours = centre._doc.openHours;
+        centresShow.push({
+          ...centre._doc,
+          images,
+          openTime: `${openHours.startTime} - ${openHours.endTime}`,
+        });
+      }
+      return centresShow;
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+
+  getManyCentresbyFilter: async ({ filter, limit, page, location, name }) => {
+    try {
+      const limitNumber = Number.parseInt(limit);
+      const pageNumber = Number.parseInt(page);
+      const skip = (pageNumber - 1) * limitNumber;
+      const query = centreModel.find(filter).sort({rating: -1});
+
+      if (!lodash.isNil(location) && !lodash.isEmpty(location) && !lodash.isNil(location.radius)) {
+        const {lng, lat, radius} = location;
+        const radiusNumber = (Number(radius) ?? 2) / 111.12;
+
+        query.where('geolocation').within({
+          center: [lng, lat],
+          radius: radiusNumber,
+          unique: true,
+          spherical: true
+        });
+      }
+
+      if (!lodash.isNil(name)) {
+        query.where({name: name});
+      }
+
+      const queryCentre = query.clone();
+      const [centres, total] = await Promise.all([
+        queryCentre
+          .populate("author")
+          .populate("cityCode")
+          .populate("districtCode")
+          .populate("wardCode")
+          .skip(skip)
+          .limit(limitNumber),
+        query.count(),
+      ]);
+      const centresShow = [];
+      for (const centre of centres) {
+        const images = await imageModel.find({ targetId: centre._id });
+        const openHours = centre._doc.openHours;
+        centresShow.push({
+          ...centre._doc,
+          images,
+          openTime: `${openHours.startTime} - ${openHours.endTime}`,
+        });
+      }
+
+      return [centresShow, total];
     } catch (error) {
       throw new Error(error);
     }

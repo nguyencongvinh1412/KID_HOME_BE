@@ -35,6 +35,8 @@ const centreHelper = {
         centre.yearEstablished,
         centreHelper.calculateDurationOpen(centre),
         centre.rating,
+        centre.serviceType,
+        centre.wardCode.code
       ];
       centresFormat.push(centreFormat);
     });
@@ -80,6 +82,10 @@ const centreHelper = {
 
     return centreIds;
   },
+
+  formatServiceType: (serviceTypes) => {
+    return serviceTypes.map((item) => item._id.valueOf());
+  }
 };
 
 module.exports = centreHelper;

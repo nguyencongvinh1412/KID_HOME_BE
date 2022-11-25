@@ -69,9 +69,13 @@ route.get(
   controller.getDetailBySuperAdmin
 );
 
+route.get("/parent-by-filter", controller.getManyCentresByFilter);
+
 route.get("/parent", controller.getManyCentreByParent);
 
-route.get("/parent/:id", controller.getDetailBySuperAdmin);
+route.get("/parent/nearby-centre", controller.getCentresNearbyCentre);
+
+route.get("/parent/:id", controller.getDetailByParent);
 
 route.get("/parent/recommend/:userId", controller.getCentresRecommend);
 

@@ -75,8 +75,8 @@ const Centre = new Schema({
     type: String,
     requried: true
   },
-  yearsOld: {
-    type: String,
+  serviceType: {
+    type: [String],
     required: true
   },
   author: {
@@ -87,5 +87,7 @@ const Centre = new Schema({
 }, {
     timestamps: true
 });
+
+Centre.index({geolocation: "2dsphere"});
 
 module.exports = mongoose.model("centre", Centre);
