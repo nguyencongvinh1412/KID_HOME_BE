@@ -131,16 +131,19 @@ const blogService = {
 
   getManyBlogByParent: async (data) => {
     try {
-        let {limit = 9, page = 1} = data;
+        let {limit = 9, page = 1, filter} = data;
         limit = Number.parseInt(limit);
         page = Number.parseInt(page);
         const skip = (page - 1) * limit;
+        const [blogs, total] = await Promise.all([
+          blogModel.find(filter)
+          .populate("centre")
+          .populate("author")
+          .skip(skip)
+          .limit(limit),
+          blogModel.find(filter).count(),
+        ]);
 
-        const blogs = await blogModel.find({})
-            .skip(skip)
-            .limit(limit)
-            .populate("author")
-            .populate("centre");
         let blogsShow = [];
 
         for (const blog of blogs) {
@@ -151,7 +154,6 @@ const blogService = {
                 image
             });
         }
-        const total = blogsShow.length;
         return [blogsShow, total];
     } catch (error) {
         throw new Error(error);

@@ -10,7 +10,7 @@ async function connect() {
         autoIndex: false,
         autoCreate: true
       });
-      // mongoose.set('debug', true);
+      mongoose.set('debug', true);
     console.log('connect successfully...');
   } catch (error) {
     console.log('connect failed...', error);

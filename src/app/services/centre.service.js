@@ -401,7 +401,8 @@ const centreService = {
       }
 
       if (!lodash.isNil(name)) {
-        query.where({name: name});
+        name = new RegExp(name, 'i');
+        query.where({name: { $in: name }});
       }
 
       const queryCentre = query.clone();

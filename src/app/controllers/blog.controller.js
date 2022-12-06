@@ -2,6 +2,7 @@ const blogService = require("../services/blog.service");
 const formidable = require("formidable");
 const uploader = require("../../config/cloudinary/cloudinary");
 const imageService = require("../services/image.service");
+const { isNil, isString } = require("lodash");
 
 const blogController = {
   createByCentreAdmin: async (req, res, next) => {
@@ -117,11 +118,16 @@ const blogController = {
 
   getManyBlogByParent: async (req, res) => {
     try {
-      const { page = 1, limit = 9 } = req.query;
-
+      let { page = 1, limit = 9, title } = req.query;
+      let filter = {};
+      if (isString(title)) {
+        title = new RegExp(title, 'i');
+        filter.title = title;
+      }
       const [blogs, total] = await blogService.getManyBlogByParent({
         page,
         limit,
+        filter
       });
       return res
         .status(200)
