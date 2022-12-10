@@ -3,7 +3,7 @@ const route = express.Router();
 const controller = require("../../app/controllers/insight.controller");
 const authMiddleware = require("../middlewares/auth.middleware");
 
-route.get('/total-value',authMiddleware.isCentreAdmin, controller.getTotalValue);
+route.get('/total-value',authMiddleware.isAdmin, controller.getTotalValue);
 
 route.get("/applications", authMiddleware.isCentreAdmin, controller.getInsightApplications);
 

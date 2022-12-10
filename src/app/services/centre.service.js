@@ -12,6 +12,8 @@ const lodash = require("lodash");
 const { PythonShell } = require("python-shell");
 const centreHelper = require("../../helpers/centre.helper");
 const { error } = require("console");
+const interateCentreModel = require("../models/interateCentre.model");
+const { MAX_COUNT_VIEW } = require("../../constants/comment.constant");
 
 const centreService = {
   createOne: async (data) => {
@@ -124,8 +126,10 @@ const centreService = {
         .populate("cityCode")
         .populate("districtCode")
         .populate("wardCode");
-      
-      const services = await serviceTypeModel.find({_id: { $in: centre.serviceType }});
+
+      const services = await serviceTypeModel.find({
+        _id: { $in: centre.serviceType },
+      });
       const images = await imageModel.find({ targetId: centre._id });
       openTime = centre._doc.openHours;
       return {
@@ -206,8 +210,10 @@ const centreService = {
         .populate("cityCode")
         .populate("districtCode")
         .populate("wardCode");
-      
-      const services = await serviceTypeModel.find({_id: { $in: centre.serviceType }});
+
+      const services = await serviceTypeModel.find({
+        _id: { $in: centre.serviceType },
+      });
       const images = await imageModel.find({ targetId: centre._id });
       openTime = centre._doc.openHours;
       return {
@@ -257,16 +263,50 @@ const centreService = {
     }
   },
 
-  getDetailByParent: async (centreId) => {
+  getDetailByParent: async (centreId, userId) => {
     try {
-      let centre = await centreModel
+      let centre;
+      let interateCentre = undefined;
+      if (userId) {
+        [centre, interateCentre] = await Promise.all([
+          centreModel
+            .findOne({ _id: centreId, isActive: true })
+            .populate("author")
+            .populate("cityCode")
+            .populate("districtCode")
+            .populate("wardCode"),
+          interateCentreModel.findOne({ centre: centreId, user: userId }).lean(),
+        ]);
+      } else {
+        centre = await centreModel
         .findOne({ _id: centreId, isActive: true })
         .populate("author")
         .populate("cityCode")
         .populate("districtCode")
-        .populate("wardCode");
+        .populate("wardCode")
+      }
 
-      const services = await serviceTypeModel.find({_id: { $in: centre.serviceType }});
+      if (!interateCentre && userId) {
+        interateCentre = {
+          centre: centreId,
+          user: userId,
+          countView: 1,
+          rating: 0,
+        };
+        interateCentre = new interateCentreModel(interateCentre);
+        await interateCentre.save();
+      } else if (userId) {
+        let countView = interateCentre.countView + 1
+        countView = Math.min(countView, MAX_COUNT_VIEW);
+        await interateCentreModel.updateOne(
+          { centre: centreId, user: userId },
+          { countView: countView }
+        );
+      }
+
+      const services = await serviceTypeModel.find({
+        _id: { $in: centre.serviceType },
+      });
       const images = await imageModel.find({ targetId: centre._id });
       openTime = centre._doc.openHours;
       return {
@@ -287,19 +327,17 @@ const centreService = {
       // all centres
 
       let [ratingHistory, centres, serviceTypes] = await Promise.all([
-        ratingModel
-        .find({ author: ObjectId(userId) })
-        .sort({ createdAt: -1 })
-        .populate("author")
-        .populate("centre"),
+        interateCentreModel
+          .find({ user: ObjectId(userId) })
+          .sort({ createdAt: -1 }),
         centreModel
-        .find({})
-        .populate("wardCode")
-        .select("fee yearEstablished rating openHours rating serviceType wardCode"),
+          .find({})
+          .populate("wardCode")
+          .select("fee yearEstablished openHours serviceType wardCode"),
         serviceTypeModel.find({}).select("_id"),
       ]);
-      
-      ratingHistory = centreHelper.distinctRatingHistory(ratingHistory);
+
+      // ratingHistory = centreHelper.distinctRatingHistory(ratingHistory);
       ratingHistory = centreHelper.formatRatingHistory(ratingHistory);
       centres = centreHelper.formatCentres(centres);
       serviceTypes = centreHelper.formatServiceType(serviceTypes);
@@ -307,13 +345,18 @@ const centreService = {
       PythonShell.run(
         "src/helpers/Recommends/recommendSys.py",
         {
-          args: [JSON.stringify(ratingHistory), JSON.stringify(centres), JSON.stringify(serviceTypes)],
+          args: [
+            JSON.stringify(ratingHistory),
+            JSON.stringify(centres),
+            JSON.stringify(serviceTypes),
+          ],
           mode: "text",
         },
         async (err, results) => {
           if (err) throw err;
           response = results;
           const centreRecommend = JSON.parse(response[0]);
+          // console.log("result for recommend:", centreRecommend);
           const centreIdsRecommend = centreHelper.getNumberCentresRecommend(
             centreRecommend,
             9
@@ -386,23 +429,27 @@ const centreService = {
       const limitNumber = Number.parseInt(limit);
       const pageNumber = Number.parseInt(page);
       const skip = (pageNumber - 1) * limitNumber;
-      const query = centreModel.find(filter).sort({rating: -1});
+      const query = centreModel.find(filter).sort({ rating: -1 });
 
-      if (!lodash.isNil(location) && !lodash.isEmpty(location) && !lodash.isNil(location.radius)) {
-        const {lng, lat, radius} = location;
+      if (
+        !lodash.isNil(location) &&
+        !lodash.isEmpty(location) &&
+        !lodash.isNil(location.radius)
+      ) {
+        const { lng, lat, radius } = location;
         const radiusNumber = (Number(radius) ?? 2) / 111.12;
 
-        query.where('geolocation').within({
+        query.where("geolocation").within({
           center: [lng, lat],
           radius: radiusNumber,
           unique: true,
-          spherical: true
+          spherical: true,
         });
       }
 
       if (!lodash.isNil(name)) {
-        name = new RegExp(name, 'i');
-        query.where({name: { $in: name }});
+        name = new RegExp(name, "i");
+        query.where({ name: { $in: name } });
       }
 
       const queryCentre = query.clone();
@@ -432,6 +479,22 @@ const centreService = {
       throw new Error(error);
     }
   },
+
+  updateGenerateInfoByAdmin: async ({data, centreId}) => {
+    try {
+      await centreModel.updateOne({_id: centreId}, data);
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
+
+  updateDescriptionByAdmin: async ({data, centreId}) => {
+    try {
+      await centreModel.updateOne({_id: centreId}, data);
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
 };
 
 module.exports = centreService;

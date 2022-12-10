@@ -34,7 +34,6 @@ const centreHelper = {
         centre.fee,
         centre.yearEstablished,
         centreHelper.calculateDurationOpen(centre),
-        centre.rating,
         centre.serviceType,
         centre.wardCode.code
       ];
@@ -47,10 +46,12 @@ const centreHelper = {
   formatRatingHistory: (ratingsHistory) => {
     let ratingsFormat = [];
     ratingsHistory.forEach((ratingHistory) => {
+      const rate = 2*ratingHistory.countView + 1*ratingHistory.rating;
+      console.log('rate like:',rate);
       const ratingFormat = [
-        ratingHistory.author._id.valueOf(),
-        ratingHistory.centre._id.valueOf(),
-        ratingHistory.rating,
+        ratingHistory.user.valueOf(),
+        ratingHistory.centre.valueOf(),
+        rate,
       ];
 
       ratingsFormat.push(ratingFormat);

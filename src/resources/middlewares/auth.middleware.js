@@ -21,6 +21,24 @@ const authMiddleware = {
     }
   },
 
+  isOptionAuth: (req, res, next) => {
+    const Authorization = req.get('Authorization');
+    if(Authorization) {
+      const token = Authorization.split(" ")[1];
+      jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+        if (err) {
+          res.status(403).json({message: "Forbidden", data: {}})
+        }
+
+        req.user = user._doc;
+        next();
+      })
+    }
+    else {
+      next();
+    }
+  },
+
   isSuperAdmin: (req, res, next) => {
     authMiddleware.verifyToken(req, res, () => {
       if (req.user.roleId.name === ROLE.SUPER_ADMIN) {
@@ -59,7 +77,17 @@ const authMiddleware = {
         res.status(403).json({message: "Forbidden", data: {}});
       }
     })
-  }
+  },
+
+  isAdmin: (req, res, next) => {
+    authMiddleware.verifyToken(req, res, () => {
+      if (req.user.roleId.name === ROLE.CENTRE_ADMIN || req.user.roleId.name === ROLE.SUPER_ADMIN) {
+        next();
+      } else {
+        res.status(403).json({message: "Forbidden", data: {}});
+      }
+    })
+  },
 }
 
 

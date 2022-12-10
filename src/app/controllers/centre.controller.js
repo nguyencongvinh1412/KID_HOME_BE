@@ -203,7 +203,9 @@ const centreController = {
   getDetailByParent: async (req, res) => {
     try {
       const id = req.params.id;
-      const centre = await centreService.getDetailByParent(id);
+      const userId = req?.user?._id ?? undefined;
+      console.log('userId 123ddd:', userId);
+      const centre = await centreService.getDetailByParent(id, userId);
       return res.status(200).json({ message: "Successfully", result: centre });
     } catch (error) {
       return res.status(500).json({ message: error.message, result: error });
@@ -253,6 +255,39 @@ const centreController = {
       return res.status(200).json({message: "Successfully", result: {centres: centres, paging: {page, limit, total}}});
     } catch (error) {
       return res.status(500).json({ message: error.message, data: error }); 
+    }
+  },
+
+  updateGenerateInfoByAdmin: async (req, res) => {
+    try {
+      const centreId = req.params.centreId;
+      let data = req.body;
+      data = {
+        ...data,
+        openHours: {
+          startTime: dateFns.format(new Date(data.startTime), "HH:mm"),
+          endTime: dateFns.format(new Date(data.endTime), "HH:mm"),
+        },
+      }
+
+      await centreService.updateGenerateInfoByAdmin({data, centreId});
+      return res.status(200).json({message: "Successfully", result: {}});
+    } catch (error) {
+      return res.status(400).json({ message: error.message, data: error });
+    }
+  },
+
+  updateDescriptionByAdmin: async (req, res) => {
+    try {
+      let data = req.body;
+      const centreId = req.params.centreId;
+      data = {
+        description: data.description
+      }
+      await centreService.updateDescriptionByAdmin({data, centreId});
+      return res.status(200).json({message: "Successfully", result: {}});
+    } catch (error) {
+      return res.status(400).json({ message: error.message, data: error });
     }
   }
 };

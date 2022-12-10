@@ -2,16 +2,24 @@ const ratingModel = require("../models/rating.model");
 const ObjectId = require("mongoose").Types.ObjectId;
 const centreModel = require("../models/centre.model");
 const lodash = require('lodash');
-const applicationModel = require("../models/application.model");
+const interateCentreModel = require("../models/interateCentre.model");
 
 const ratingService = {
   addRating: async (data) => {
     try {
-      // let isApply = await applicationModel.findOne({centre: data.centre, parent: data.author}).count();
-      // console.log('isApply 123:',isApply);
-      // if (isApply <= 0) {
-      //   throw new Error("You are not allowed to review for this centre");
-      // }
+      let interateCentre = await interateCentreModel.findOne({centre: data.centre, user: data.author}).lean();
+      if (!interateCentre) {
+        let interateCentre = new interateCentreModel({
+          rating: data.rating,
+          centre: data.centre,
+          user: data.author,
+          countView: 1
+        });
+        await interateCentre.save();
+      } else {
+        await interateCentreModel.updateOne({centre: data.centre, user: data.author}, {rating: data.rating});
+      }
+
       let rating = new ratingModel(data);
       rating = await rating.save();
       const ratings = await ratingModel.find({centre: data.centre});

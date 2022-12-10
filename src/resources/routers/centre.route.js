@@ -39,7 +39,7 @@ route.delete(
 
 route.get(
   "/centre-admin/:id",
-  authMiddleware.isCentreAdmin,
+  authMiddleware.isAdmin,
   controller.getDetailByCentreAdmin
 );
 
@@ -75,8 +75,11 @@ route.get("/parent", controller.getManyCentreByParent);
 
 route.get("/parent/nearby-centre", controller.getCentresNearbyCentre);
 
-route.get("/parent/:id", controller.getDetailByParent);
+route.get("/parent/:id",authMiddleware.isOptionAuth, controller.getDetailByParent);
 
 route.get("/parent/recommend/:userId", controller.getCentresRecommend);
 
+route.put("/centre-admin/update-generate-info/:centreId", authMiddleware.isAdmin, controller.updateGenerateInfoByAdmin)
+
+route.put("/centre-admin/update-description-info/:centreId", authMiddleware.isAdmin, controller.updateDescriptionByAdmin);
 module.exports = route;

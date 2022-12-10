@@ -1,11 +1,16 @@
+const { ROLE } = require("../../constants/role.constant");
 const insightService = require("../services/insight.service");
 
 const insightController = {
     getTotalValue: async (req, res) => {
         try {
+            let result = {};
             const userId = req.user._id;
-            const [totalCentres, totalApplications, totalBlogs] = await insightService.getTotalValue({userId});
-            return res.status(200).json({message: "Successfully", result: {totalCentres, totalApplications, totalBlogs}});
+            if (req.user.roleId.name === ROLE.CENTRE_ADMIN) {
+                const [totalCentres, totalApplications, totalBlogs] = await insightService.getTotalValue({userId});
+                result = {totalCentres, totalApplications, totalBlogs}
+            }
+            return res.status(200).json({message: "Successfully", result});
         } catch (error) {
             return res.status(400).json({ message: error.message, data: error });
         }
