@@ -338,6 +338,7 @@ const centreService = {
       ]);
 
       // ratingHistory = centreHelper.distinctRatingHistory(ratingHistory);
+      console.log("ratingHistory", ratingHistory);
       ratingHistory = centreHelper.formatRatingHistory(ratingHistory);
       centres = centreHelper.formatCentres(centres);
       serviceTypes = centreHelper.formatServiceType(serviceTypes);

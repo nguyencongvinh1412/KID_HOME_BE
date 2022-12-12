@@ -91,6 +91,16 @@ const applicationController = {
       return res.status(400).json({ message: error.message, data: error });
     }
   },
+
+  checkAppliedBeforeByParent: async (req, res) => {
+    try {
+      const userId = req.user._id;
+      const isApplied = await applicationService.isAppliedByParent({userId});
+      return res.status(200).json({message: "Successfully", result: {isApplied}});
+    } catch (error) {
+      return res.status(400).json({ message: error.message, data: error }); 
+    }
+  }
 };
 
 module.exports = applicationController;

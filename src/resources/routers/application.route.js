@@ -13,5 +13,7 @@ route.get("/parent/details/:applicationId", authMiddleware.verifyToken, controll
 
 route.get("/centre-admin", authMiddleware.isCentreAdmin, controller.getApplicationsByCentreAdmin);
 
+route.get("/parent/is-applied", authMiddleware.isParent, controller.checkAppliedBeforeByParent);
+
 
 module.exports = route;

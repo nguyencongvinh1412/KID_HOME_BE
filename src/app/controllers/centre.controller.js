@@ -204,7 +204,7 @@ const centreController = {
     try {
       const id = req.params.id;
       const userId = req?.user?._id ?? undefined;
-      console.log('userId 123ddd:', userId);
+      // console.log('userId 123ddd:', userId);
       const centre = await centreService.getDetailByParent(id, userId);
       return res.status(200).json({ message: "Successfully", result: centre });
     } catch (error) {
@@ -219,7 +219,7 @@ const centreController = {
       if (isUserRated) {
         await centreService.getCentresRecommend(res, userId);
       } else {
-        const centres = await centreService.getManyCentreByParent({page: 1, limit: 9});
+        const [centres, total] = await centreService.getManyCentreByParent({page: 1, limit: 9});
         return res.status(200).json({message: "Successfully", result: centres});
       }
     } catch (error) {

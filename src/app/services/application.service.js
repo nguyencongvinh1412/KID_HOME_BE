@@ -182,6 +182,19 @@ const applicationService = {
     } catch (error) {
       throw new Error(error);
     }
+  },
+
+  isAppliedByParent: async ({userId}) => {
+    try{
+      const isApplied = await applicationModel.findOne({parent: userId}).count();
+      console.log(isApplied);
+      if (isNil(isApplied) || isApplied === 0) {
+        return false;
+      }
+      return true;
+    } catch (error) {
+      throw new Error(error);
+    }
   }
 };
 
