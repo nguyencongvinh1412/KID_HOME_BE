@@ -19,12 +19,15 @@ const blogService = {
       limit = Number.parseInt(limit);
       page = Number.parseInt(page);
       const skip = (page - 1) * limit;
-      const blogs = await blogModel
+      const [total, blogs] = await Promise.all([
+        blogModel.find({author: ObjectId(authorId)}).count(),
+        blogModel
         .find({ author: ObjectId(authorId) })
         .skip(skip)
         .limit(limit)
         .populate("author")
-        .populate("centre");
+        .populate("centre")
+      ]);
 
       let blogsShow = [];
       for (const blog of blogs) {
@@ -34,7 +37,6 @@ const blogService = {
           image,
         });
       }
-      const total = blogsShow.length;
       return [blogsShow, total];
     } catch (error) {
       throw new Error(error);
