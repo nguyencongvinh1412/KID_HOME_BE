@@ -248,7 +248,6 @@ const centreController = {
       delete otherFilter.lng;
       delete otherFilter.lat;
       delete otherFilter.distance;
-      delete otherFilter.serviceType;
       otherFilter.centreName = req.query?.name;
 
       const [centres, total] = await centreService.getManyCentresbyFilter({filter: otherFilter, limit, page, location, name});

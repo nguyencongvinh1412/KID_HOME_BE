@@ -430,7 +430,17 @@ const centreService = {
       const limitNumber = Number.parseInt(limit);
       const pageNumber = Number.parseInt(page);
       const skip = (pageNumber - 1) * limitNumber;
+      console.log("filter: 123", filter);
+      let filterServiceType = null;
+      if (filter.serviceType) {
+        filterServiceType = filter.serviceType;
+        delete filter.serviceType;
+      }
       const query = centreModel.find(filter).sort({ rating: -1 });
+
+      if (filterServiceType) {
+        query.where("serviceType").in(filterServiceType)
+      }
 
       if (
         !lodash.isNil(location) &&
