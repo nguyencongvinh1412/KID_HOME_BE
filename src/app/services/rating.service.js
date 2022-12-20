@@ -46,7 +46,7 @@ const ratingService = {
 
   isUserRated: async (userId) => {
     try {
-      const rating = await ratingModel.findOne({author: ObjectId(userId)});
+      const rating = await interateCentreModel.findOne({user: ObjectId(userId)});
       return !lodash.isNil(rating);
 
     } catch (error) {
